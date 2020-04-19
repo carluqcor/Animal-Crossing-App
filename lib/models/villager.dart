@@ -7,7 +7,7 @@ import 'package:intl/intl.dart';
 import 'package:dio/dio.dart';
 
 class Villagers {
-  final List<String> villagers;
+  final List<dynamic> villagers;
 
   const Villagers({
     this.villagers
@@ -15,8 +15,12 @@ class Villagers {
 
   factory Villagers.fromJson(Map<String, dynamic> json) {
     return Villagers(
-      villagers: json['query']['categorymembers'][0]['title']
+      villagers: json['query']['categorymembers']
     );
+  }
+
+  String getName(villager) {
+    return villager['name'];
   }
 }
 
@@ -37,7 +41,7 @@ class Villager {
       leastFavClothing,
       favColor,
       link;
-  final DateTime updated;
+  //final DateTime updated;
 
   const Villager(
       {this.name,
@@ -56,7 +60,8 @@ class Villager {
       this.leastFavClothing,
       this.favColor,
       this.link,
-      this.updated});
+      //this.updated
+      });
 
   factory Villager.fromJson(Map<String, dynamic> json) {
     return Villager(
@@ -76,7 +81,7 @@ class Villager {
       leastFavClothing: json['leastfaclothing'],
       favColor: json['favcolor'],
       link: json['link'],
-      updated: DateTime.parse(json['update']).toLocal(),
+      //updated: DateTime.parse(json['updated']).toLocal(),
     );
   }
 }

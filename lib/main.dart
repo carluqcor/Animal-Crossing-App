@@ -1,3 +1,4 @@
+import 'package:ACApp/repositories/villager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
@@ -15,6 +16,7 @@ class CherryApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => ThemeProvider()),
+        ChangeNotifierProvider(create: (_) => VillagerRepository())
       ],
       child: Consumer<ThemeProvider>(
         builder: (context, model, child) => MaterialApp(

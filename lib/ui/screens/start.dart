@@ -35,6 +35,7 @@ class _StartScreenState extends State<StartScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: IndexedStack(index: _currentIndex, children: [
+        HomeTab(),
         VillagerTab(),
         //NestingTab(),
         //ShinyTab(),

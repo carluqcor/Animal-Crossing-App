@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_web_browser/flutter_web_browser.dart';
 
-import 'hero_image.dart';
-import 'separator.dart';
+import 'index.dart';
 
 /// HEAD CARD PAGE WIDGET
 /// Widget used as page head in details pages, like 'Recipe Page' or 'Cocktail Page'.
@@ -26,13 +25,14 @@ class HeadCardPage extends StatelessWidget {
         padding: const EdgeInsets.all(24),
         child: Column(children: <Widget>[
           Row(children: <Widget>[
-            HeroImage.card(
+            HeroImage(
               url: imageUrl,
               tag: title,
-              onTap: () async => await FlutterWebBrowser.openWebPage(
-                    url: imageUrl,
-                    androidToolbarColor: Theme.of(context).primaryColor,
-                  ),
+              size: 192.0,
+              onTap: () => FlutterWebBrowser.openWebPage(
+                url: imageUrl,
+                androidToolbarColor: Theme.of(context).primaryColor,
+              ),
             ),
             Separator.spacer(width: 14),
             Expanded(

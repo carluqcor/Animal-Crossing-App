@@ -8,3 +8,4 @@ export 'head_card_page.dart';
 export 'hero_image.dart';
 export 'card_page.dart';
 export 'row_item.dart';
+export 'list_cell.dart';
