@@ -46,6 +46,14 @@ class RowItem extends StatelessWidget {
     return RowItem(title, _getText(context, description), null);
   }
 
+   factory RowItem.textRowBold(
+    BuildContext context,
+    String title,
+    String description,
+  ) {
+    return RowItem(title, _getText(context, description), null);
+  }
+
   /// Builds a normal Date-to-Text row item
   factory RowItem.dateRow(
     BuildContext context,

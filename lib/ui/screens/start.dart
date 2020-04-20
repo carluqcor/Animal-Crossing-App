@@ -25,6 +25,9 @@ class _StartScreenState extends State<StartScreen> {
         case 'villagers':
           setState(() => _currentIndex = 1);
           break;
+        case 'critters':
+          setState(() => _currentIndex = 2);
+          break;
         default:
           setState(() => _currentIndex = 0);
       }
@@ -37,8 +40,7 @@ class _StartScreenState extends State<StartScreen> {
       body: IndexedStack(index: _currentIndex, children: [
         HomeTab(),
         VillagerTab(),
-        //NestingTab(),
-        //ShinyTab(),
+        CritterTab(),
       ]),
       bottomNavigationBar: BottomNavigationBar(
         selectedLabelStyle: TextStyle(fontFamily: 'ProductSans'),
@@ -53,6 +55,10 @@ class _StartScreenState extends State<StartScreen> {
           ),
           BottomNavigationBarItem(
             title: Text('Villager'),
+            icon: Icon(Icons.people),
+          ),
+          BottomNavigationBarItem(
+            title: Text('Critter'),
             icon: Icon(Icons.home),
           ),
           /*BottomNavigationBarItem(
