@@ -1,6 +1,12 @@
 # AC_app
 
-A new Flutter project.
+This is a brand new app to show the potential of Animal Crossing: New Horizons
+
+![Imgur](https://i.imgur.com/X7WtKDq.jpg)
+![Imgur](https://i.imgur.com/MXh2yBs.jpg)
+![Imgur](https://i.imgur.com/W0NTidV.jpg)
+![Imgur](https://i.imgur.com/iF3k1t8.jpg)
+![Imgur](https://i.imgur.com/weNvlz5.jpg)
 
 ## Getting Started
 
