@@ -14,7 +14,6 @@ class CritterTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var date = new DateTime.now();
-    print(date.month);
     return Consumer<CritterRepository>(
       builder: (context, model, child) => Scaffold(
         body: model.isLoading

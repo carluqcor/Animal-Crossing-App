@@ -1,4 +1,5 @@
 import 'package:ACApp/models/villager.dart';
+import 'package:ACApp/util/index.dart';
 import 'package:flutter/material.dart';
 
 import '../../models/index.dart';
@@ -107,7 +108,7 @@ class VillagerPage extends StatelessWidget {
                   context,
                   'Favorite Colour',
                   _villager.favColor != null ? _villager.favColor : '',
-                  Colors.white,
+                  colors[_villager.favColor],
                   //Colors.getColorVillager(_villager.favColor),
                 ),
               ],

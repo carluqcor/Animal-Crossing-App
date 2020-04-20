@@ -32,3 +32,14 @@ const common = Colors.blueAccent;
 const uncommon = Colors.greenAccent;
 const rare = Colors.purpleAccent;
 const very_rare = Colors.orangeAccent;
+
+final Map<String, Color> colors = {
+  'White': Colors.white,
+  'Red': Colors.redAccent,
+  'Blue': Colors.blueAccent,
+  'Green': Colors.greenAccent,
+  'Yellow': Colors.yellowAccent,
+  'Black': Colors.black,
+  'Orange': Colors.orangeAccent,
+  'Purple': Colors.purpleAccent,
+};
