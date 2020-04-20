@@ -15,4 +15,13 @@ class ApiService {
   static Future<Response> getVillager(String name) async {
     return Dio().get(Url.villager+name+'/'+Url.nookApi);
   }
+
+  static Future<Response> getCritters() async {
+    return Dio().get(Url.critterList);
+  }
+
+  static Future<Response> getCritter(String name) async {
+    return Dio().get(Url.critter+name+'/'+Url.nookApi);
+  }
 }
+
