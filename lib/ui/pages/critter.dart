@@ -20,8 +20,8 @@ class CritterPage extends StatelessWidget {
         padding: const EdgeInsets.all(16),
         children: <Widget>[
           HeadCardPage(
-            witdh: 80.0,
-            height: 80.0,
+            witdh: 148.0,
+            height: 148.0,
             title: _critter.name,
             imageUrl: _critter.image,
             body: Text(

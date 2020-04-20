@@ -1,6 +1,6 @@
 import 'package:ACApp/ui/pages/index.dart';
 import 'package:ACApp/ui/widgets/index.dart';
-import 'package:ACApp/repositories/villager.dart';
+import 'package:ACApp/util/index.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -13,6 +13,8 @@ import '../../repositories/index.dart';
 class CritterTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    var date = new DateTime.now();
+    print(date.month);
     return Consumer<CritterRepository>(
       builder: (context, model, child) => Scaffold(
         body: model.isLoading
@@ -28,7 +30,7 @@ class CritterTab extends StatelessWidget {
                         child: CacheImage(critter.image),
                       ),
                       title: Text(critter.name),
-                      subtitle: Text(critter.caughtQuote != null ? critter.caughtQuote : ''),
+                      subtitle: getAvailableCritter(date, critter.timeYear) || critter.timeYear == 'All year' ? Icon(Icons.check) : Icon(Icons.radio_button_unchecked),
                       onTap: () => Navigator.push(
                         context,
                         MaterialPageRoute(
