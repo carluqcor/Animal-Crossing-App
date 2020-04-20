@@ -20,14 +20,8 @@ class VillagerPage extends StatelessWidget {
         padding: const EdgeInsets.all(16),
         children: <Widget>[
           HeadCardPage(
-            title: _villager.name,
+            title: '',
             imageUrl: _villager.image,
-            subtitle: Text(
-              _villager.quote,
-              style: Theme.of(context).textTheme.subhead.copyWith(
-                    color: Theme.of(context).textTheme.caption.color,
-                  ),
-            ),
             body: Text(
               _villager.quote,
             ),
@@ -64,13 +58,17 @@ class VillagerPage extends StatelessWidget {
                 RowItem.textRow(
                   context,
                   'Islander Favorite',
-                  _villager.islanderFavorite != null ? _villager.islanderFavorite : '',
+                  _villager.islanderFavorite != null
+                      ? _villager.islanderFavorite
+                      : '',
                 ),
                 Separator.spacer(),
                 RowItem.textRow(
                   context,
                   'Islander Allergic',
-                  _villager.islanderAllergic != null ? _villager.islanderAllergic : '',
+                  _villager.islanderAllergic != null
+                      ? _villager.islanderAllergic
+                      : '',
                 ),
                 Separator.spacer(),
                 RowItem.textRow(
@@ -100,13 +98,17 @@ class VillagerPage extends StatelessWidget {
                 RowItem.textRow(
                   context,
                   'Least Favorite Clothing',
-                  _villager.leastFavClothing != null ? _villager.leastFavClothing : '',
+                  _villager.leastFavClothing != null
+                      ? _villager.leastFavClothing
+                      : '',
                 ),
                 Separator.spacer(),
-                RowItem.textRow(
+                RowItem.textRowColored(
                   context,
                   'Favorite Colour',
                   _villager.favColor != null ? _villager.favColor : '',
+                  Colors.white,
+                  //Colors.getColorVillager(_villager.favColor),
                 ),
               ],
             ),

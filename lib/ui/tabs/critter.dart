@@ -21,7 +21,6 @@ class CritterTab extends StatelessWidget {
                 itemCount: model.critterList?.length,
                 separatorBuilder: (context, index) => Divider(),
                 itemBuilder: (context, index) {
-                  print(index);
                   final Critter critter = model.getCritter(index);
                   if (critter.image != null) {
                     return ListTile(

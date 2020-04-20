@@ -7,13 +7,15 @@ import 'index.dart';
 /// Widget used as page head in details pages, like 'Recipe Page' or 'Cocktail Page'.
 class HeadCardPage extends StatelessWidget {
   final String title, imageUrl;
-  final Widget subtitle, body;
+  final Widget body;
+  final double witdh, height;
 
   HeadCardPage({
     @required this.title,
     @required this.imageUrl,
-    @required this.subtitle,
     @required this.body,
+    this.witdh,
+    this.height,
   });
 
   @override
@@ -24,36 +26,36 @@ class HeadCardPage extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(24),
         child: Column(children: <Widget>[
-          Row(children: <Widget>[
-            HeroImage(
-              url: imageUrl,
-              tag: title,
-              size: 192.0,
-              onTap: () => FlutterWebBrowser.openWebPage(
-                url: imageUrl,
-                androidToolbarColor: Theme.of(context).primaryColor,
-              ),
-            ),
-            Separator.spacer(width: 14),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  Text(
-                    title,
-                    overflow: TextOverflow.ellipsis,
-                    maxLines: 2,
-                    style: Theme.of(context)
-                        .textTheme
-                        .title
-                        .copyWith(fontWeight: FontWeight.bold),
+          title != ''
+              ? Row(children: <Widget>[
+                  SizedBox(
+                    width: witdh,
+                    height: height,
+                    child: CacheImage(imageUrl),
                   ),
-                  Separator.spacer(height: 11),
-                  subtitle,
-                ],
-              ),
-            ),
-          ]),
+                  Separator.spacer(width: 14),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Text(
+                          title,
+                          overflow: TextOverflow.ellipsis,
+                          maxLines: 2,
+                          style: Theme.of(context)
+                              .textTheme
+                              .title
+                              .copyWith(fontWeight: FontWeight.bold),
+                        ),
+                      ],
+                    ),
+                  ),
+                ])
+              : SizedBox(
+                  width: witdh,
+                  height: height,
+                  child: CacheImage(imageUrl),
+                ),
           Separator.divider(),
           body,
         ]),

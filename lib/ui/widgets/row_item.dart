@@ -8,9 +8,8 @@ import '../../util/index.dart';
 class RowItem extends StatelessWidget {
   final String title;
   final Widget description;
-  final DateTime date;
 
-  RowItem(this.title, this.description, this.date);
+  RowItem(this.title, this.description);
 
   @override
   Widget build(BuildContext context) {
@@ -43,29 +42,21 @@ class RowItem extends StatelessWidget {
     String title,
     String description,
   ) {
-    return RowItem(title, _getText(context, description), null);
+    return RowItem(title, _getText(context, description));
   }
 
-   factory RowItem.textRowBold(
+  factory RowItem.textRowColored(
     BuildContext context,
     String title,
     String description,
+    Color color,
   ) {
-    return RowItem(title, _getText(context, description), null);
-  }
-
-  /// Builds a normal Date-to-Text row item
-  factory RowItem.dateRow(
-    BuildContext context,
-    String title,
-    DateTime date,
-  ) {
-    return RowItem(title, null, date);
+    return RowItem(title, _getTextColored(context, description, false, color));
   }
 
   /// Builds a Text-to-Icon row item, to display a boolean status
   factory RowItem.iconRow(String title, bool status) {
-    return RowItem(title, _getIcon(status), null);
+    return RowItem(title, _getIcon(status));
   }
 
   /// Return an icon based on the [status] var
@@ -92,6 +83,25 @@ class RowItem extends StatelessWidget {
       textAlign: TextAlign.end,
       style: Theme.of(context).textTheme.subhead.copyWith(
             color: Theme.of(context).textTheme.caption.color,
+            decoration:
+                clickable ? TextDecoration.underline : TextDecoration.none,
+          ),
+    );
+  }
+
+  static Widget _getTextColored(
+    BuildContext context,
+    String description, [
+    bool clickable = false,
+    Color color,
+  ]) {
+    return Text(
+      description,
+      overflow: TextOverflow.ellipsis,
+      maxLines: 1,
+      textAlign: TextAlign.end,
+      style: Theme.of(context).textTheme.subhead.copyWith(
+            color: color,
             decoration:
                 clickable ? TextDecoration.underline : TextDecoration.none,
           ),

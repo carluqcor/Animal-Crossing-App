@@ -21,7 +21,7 @@ class HeroImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: size/2,
+      width: size,
       height: size,
       child: InkWell(
         onTap: onTap,

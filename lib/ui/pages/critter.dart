@@ -1,3 +1,4 @@
+import 'package:ACApp/util/get_color.dart';
 import 'package:flutter/material.dart';
 
 import '../../models/index.dart';
@@ -19,14 +20,10 @@ class CritterPage extends StatelessWidget {
         padding: const EdgeInsets.all(16),
         children: <Widget>[
           HeadCardPage(
+            witdh: 80.0,
+            height: 80.0,
             title: _critter.name,
             imageUrl: _critter.image,
-            subtitle: Text(
-              _critter.caughtQuote != null ? _critter.caughtQuote : '',
-              style: Theme.of(context).textTheme.subhead.copyWith(
-                    color: Theme.of(context).textTheme.caption.color,
-                  ),
-            ),
             body: Text(
               _critter.caughtQuote != null ? _critter.caughtQuote : '',
             ),
@@ -36,18 +33,6 @@ class CritterPage extends StatelessWidget {
             title: 'DETAILS',
             body: Column(
               children: <Widget>[
-                RowItem.textRow(
-                  context,
-                  'Scientific Name',
-                  _critter.scientificName != null ? _critter.scientificName : '',
-                ),
-                Separator.spacer(),
-                RowItem.textRow(
-                  context,
-                  'Family',
-                  _critter.family != null ? _critter.family : '',
-                ),
-                Separator.spacer(),
                 RowItem.textRow(
                   context,
                   'Time Year',
@@ -72,10 +57,11 @@ class CritterPage extends StatelessWidget {
                   _critter.size!= null ? _critter.size : '',
                 ),
                 Separator.spacer(),
-                RowItem.textRow(
+                RowItem.textRowColored(
                   context,
                   'Rarity',
                   _critter.rarity != null ? _critter.rarity : '',
+                  getRarityColor(_critter.rarity)
                 ),
                 Separator.spacer(),
                 RowItem.textRow(

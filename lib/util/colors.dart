@@ -25,3 +25,10 @@ const blackDividerColor = Color(0xFF323232);
 const acceptIcon = const Color(0xFF4CAF50);
 const denyIcon = const Color(0xFFF44336);
 const nullIcon = const Color(0xFF607D8B);
+
+/// Rarity colors
+const very_common = Colors.white;
+const common = Colors.blueAccent;
+const uncommon = Colors.greenAccent;
+const rare = Colors.purpleAccent;
+const very_rare = Colors.orangeAccent;
