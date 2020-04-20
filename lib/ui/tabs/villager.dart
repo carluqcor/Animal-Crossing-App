@@ -21,7 +21,6 @@ class VillagerTab extends StatelessWidget {
                 itemCount: model.villagerList?.length,
                 separatorBuilder: (context, index) => Divider(),
                 itemBuilder: (context, index) {
-                  print(index);
                   final Villager villager = model.getVillager(index);
                   if (villager.image != null) {
                     return ListTile(
