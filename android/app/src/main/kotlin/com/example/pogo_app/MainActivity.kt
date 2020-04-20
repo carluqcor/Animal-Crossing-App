@@ -1,4 +1,4 @@
-package com.example.pogo_app
+package com.example.ac_app
 
 import androidx.annotation.NonNull;
 import io.flutter.embedding.android.FlutterActivity
