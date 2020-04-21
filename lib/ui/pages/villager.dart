@@ -32,10 +32,9 @@ class VillagerPage extends StatelessWidget {
             title: 'DETAILS',
             body: Column(
               children: <Widget>[
-                _villager.gender != null ? RowItem.textRow(
-                  context,
+                _villager.gender != null ? RowItem.iconRowSet(
                   'Gender',
-                  _villager.gender,
+                  getIconGender(_villager.gender != null ? _villager.gender : ''),
                 ) : Separator.none(),
                 Separator.spacer(),
                 _villager.personality != null ? RowItem.textRow(

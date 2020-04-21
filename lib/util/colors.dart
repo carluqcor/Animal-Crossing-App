@@ -42,4 +42,5 @@ final Map<String, Color> colors = {
   'Black': Colors.black,
   'Orange': Colors.orangeAccent,
   'Purple': Colors.purpleAccent,
+  'Pink': Colors.pinkAccent,
 };
