@@ -59,6 +59,12 @@ class RowItem extends StatelessWidget {
     return RowItem(title, _getIcon(status));
   }
 
+
+  /// Builds a Text-to-Icon row item, to display a boolean status
+  factory RowItem.iconRowSet(String title, Icon icon) {
+    return RowItem(title, icon);
+  }
+
   /// Return an icon based on the [status] var
   static Widget _getIcon(bool status) {
     return Icon(

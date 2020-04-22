@@ -3,6 +3,7 @@ import 'package:quick_actions/quick_actions.dart';
 
 import '../../providers/index.dart';
 import '../../repositories/index.dart';
+import 'package:flutter_icons/flutter_icons.dart';
 import '../tabs/index.dart';
 
 /// This view holds all tabs & its models: home, vehicles, upcoming & latest launches, & company tabs.
@@ -55,14 +56,14 @@ class _StartScreenState extends State<StartScreen> {
           ),
           BottomNavigationBarItem(
             title: Text('Villager'),
-            icon: Icon(Icons.people),
+            icon: Icon(Icons.portrait)
           ),
           BottomNavigationBarItem(
             title: Text('Critter'),
-            icon: Icon(Icons.home),
+            icon: Icon(Octicons.bug),
           ),
           /*BottomNavigationBarItem(
-            title: Text('Nesting'),
+            title: Text('Flowers'),
             icon: Icon(Icons.home),
           ),
           BottomNavigationBarItem(
