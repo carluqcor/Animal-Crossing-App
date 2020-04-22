@@ -32,85 +32,77 @@ class VillagerPage extends StatelessWidget {
             title: 'DETAILS',
             body: Column(
               children: <Widget>[
-                RowItem.textRow(
+                _villager.gender != null ? RowItem.textRow(
                   context,
                   'Gender',
-                  _villager.gender != null ? _villager.gender : '',
-                ),
+                  _villager.gender,
+                ) : Separator.none(),
                 Separator.spacer(),
-                RowItem.textRow(
+                _villager.personality != null ? RowItem.textRow(
                   context,
                   'Personality',
-                  _villager.personality != null ? _villager.personality : '',
-                ),
+                  _villager.personality,
+                ) : Separator.none(),
                 Separator.spacer(),
-                RowItem.textRow(
+                _villager.species != null ? RowItem.textRow(
                   context,
                   'Species',
-                  _villager.species != null ? _villager.species : '',
-                ),
+                  _villager.species,
+                ) : Separator.none(),
                 Separator.spacer(),
-                RowItem.textRow(
+                _villager.birthday != null ? RowItem.textRow(
                   context,
                   'Birthday',
-                  _villager.birthday != null ? _villager.birthday : '',
-                ),
-                Separator.spacer(),
-                RowItem.textRow(
+                  _villager.birthday,
+                ) : Separator.none(),
+                isDataFilled(_villager.islanderFavorite) ? Separator.spacer() : Separator.none(),
+                isDataFilled(_villager.islanderFavorite) ? RowItem.textRow(
                   context,
                   'Islander Favorite',
-                  _villager.islanderFavorite != null
-                      ? _villager.islanderFavorite
-                      : '',
-                ),
+                      _villager.islanderFavorite,
+                ) : Separator.none(),
                 Separator.spacer(),
-                RowItem.textRow(
+                isDataFilled(_villager.islanderAllergic) ? RowItem.textRow(
                   context,
-                  'Islander Allergic',
-                  _villager.islanderAllergic != null
-                      ? _villager.islanderAllergic
-                      : '',
-                ),
-                Separator.spacer(),
-                RowItem.textRow(
+                  'Islander Allergic', _villager.islanderAllergic,
+                ) : Separator.none(),
+                isDataFilled(_villager.islanderAllergic) ? Separator.spacer() : Separator.none(),
+                _villager.skill != null ? RowItem.textRow(
                   context,
                   'Skill',
-                  _villager.skill != null ? _villager.skill : '',
-                ),
+                  _villager.skill,
+                ) : Separator.none(),
                 Separator.spacer(),
-                RowItem.textRow(
+                _villager.goal != null ? RowItem.textRow(
                   context,
                   'Goal',
-                  _villager.goal != null ? _villager.goal : '',
-                ),
+                  _villager.goal,
+                ) : Separator.none(),
                 Separator.spacer(),
-                RowItem.textRow(
+                _villager.fear != null ? RowItem.textRow(
                   context,
                   'Fear',
-                  _villager.fear != null ? _villager.fear : '',
-                ),
+                  _villager.fear,
+                ) : Separator.none(),
                 Separator.spacer(),
-                RowItem.textRow(
+                _villager.favClothing != null ? RowItem.textRow(
                   context,
                   'Favorite Clothing',
-                  _villager.favClothing != null ? _villager.favClothing : '',
-                ),
+                  _villager.favClothing,
+                ) : Separator.none(),
                 Separator.spacer(),
-                RowItem.textRow(
+                _villager.leastFavClothing != null ? RowItem.textRow(
                   context,
                   'Least Favorite Clothing',
-                  _villager.leastFavClothing != null
-                      ? _villager.leastFavClothing
-                      : '',
-                ),
+                  _villager.leastFavClothing,
+                ) : Separator.none(),
                 Separator.spacer(),
-                RowItem.textRowColored(
+                _villager.favColor != null ? RowItem.textRowColored(
                   context,
                   'Favorite Colour',
-                  _villager.favColor != null ? _villager.favColor : '',
+                  _villager.favColor,
                   colors[_villager.favColor],
-                  //Colors.getColorVillager(_villager.favColor),
-                ),
+                ) : Separator.none(),
               ],
             ),
           ),
