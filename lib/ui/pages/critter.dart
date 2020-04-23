@@ -1,7 +1,9 @@
 import 'package:ACApp/util/get_color.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_icons/flutter_icons.dart';
 
 import '../../models/index.dart';
+import '../../util/index.dart';
 import '../widgets/index.dart';
 
 /// COCKTAIL PAGE VIEW
@@ -9,7 +11,7 @@ import '../widgets/index.dart';
 /// instructions, ingredients and measure
 class CritterPage extends StatelessWidget {
   final Critter _critter;
-
+  var date = new DateTime.now();
   CritterPage(this._critter);
 
   @override
@@ -20,12 +22,10 @@ class CritterPage extends StatelessWidget {
         padding: const EdgeInsets.all(16),
         children: <Widget>[
           HeadCardPage(
-            witdh: 148.0,
-            height: 148.0,
-            title: _critter.name,
+            title: '',
             imageUrl: _critter.image,
             body: Text(
-              _critter.caughtQuote != null ? _critter.caughtQuote : '',
+              _critter.caughtQuote,
             ),
           ),
           Separator.cardSpacer(),
@@ -37,6 +37,11 @@ class CritterPage extends StatelessWidget {
                   context,
                   'Time Year',
                   _critter.timeYear != null ? _critter.timeYear : '',
+                ),
+                Separator.spacer(),
+                RowItem.iconRowSet(
+                  'Available',
+                  getAvailableCritter(date, _critter.timeYear) || _critter.timeYear == 'All year' ? Icon(FontAwesome.check_circle, color: Colors.greenAccent) : Icon(Entypo.circle_with_cross, color: Colors.redAccent),
                 ),
                 Separator.spacer(),
                 RowItem.textRow(

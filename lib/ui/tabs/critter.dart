@@ -3,6 +3,7 @@ import 'package:ACApp/ui/widgets/index.dart';
 import 'package:ACApp/util/index.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter_icons/flutter_icons.dart';
 
 import '../widgets/index.dart';
 import '../../models/index.dart';
@@ -29,7 +30,7 @@ class CritterTab extends StatelessWidget {
                         child: CacheImage(critter.image),
                       ),
                       title: Text(critter.name),
-                      subtitle: getAvailableCritter(date, critter.timeYear) || critter.timeYear == 'All year' ? Icon(Icons.check) : Icon(Icons.radio_button_unchecked),
+                      trailing: getAvailableCritter(date, critter.timeYear) || critter.timeYear == 'All year' ? Icon(FontAwesome.check_circle, color: Colors.greenAccent) : Icon(Entypo.circle_with_cross, color: Colors.redAccent),
                       onTap: () => Navigator.push(
                         context,
                         MaterialPageRoute(

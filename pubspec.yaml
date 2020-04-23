@@ -63,7 +63,4 @@ flutter:
         - asset: assets/fonts/ProductSans-Bold.ttf
         - asset: assets/fonts/ProductSans-Regular.ttf
 
-  assets:
-    - assets/icons/
-
   uses-material-design: true

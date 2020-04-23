@@ -24,8 +24,3 @@ Color getRarityColor(String rarity) {
       return very_common;
   }
 }
-
-/**Color getColorVillager(String color){
-  
-  return Colors};
-}*/
