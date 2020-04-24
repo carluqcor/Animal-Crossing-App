@@ -27,6 +27,7 @@ class CritterPage extends StatelessWidget {
             body: Text(
               _critter.caughtQuote,
             ),
+            separator: true,
           ),
           Separator.cardSpacer(),
           CardPage(

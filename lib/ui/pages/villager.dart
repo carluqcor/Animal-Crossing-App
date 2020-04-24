@@ -26,6 +26,7 @@ class VillagerPage extends StatelessWidget {
             body: Text(
               _villager.quote,
             ),
+            separator: true,
           ),
           Separator.cardSpacer(),
           CardPage(

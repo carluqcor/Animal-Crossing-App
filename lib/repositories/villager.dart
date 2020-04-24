@@ -20,12 +20,8 @@ class VillagerRepository extends BaseRepository {
       villagers = Villagers.fromJson(villagersReponse.data);
 
       for (int x = 0; x < villagers.villagers.length; x++) {
-        villagerListName.add(villagers.villagers[x]['title']);
-      }
-
-      for (int x = 0; x < villagerListName.length; x++) {
         final Response villager =
-          await ApiService.getVillager(villagerListName[x]);
+          await ApiService.getVillager(villagers.villagers[x]['title']);
         villagerList.add(Villager.fromJson(villager.data));
       }
 

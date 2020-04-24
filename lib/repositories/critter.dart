@@ -18,14 +18,10 @@ class CritterRepository extends BaseRepository {
       final Response crittersReponse = await ApiService.getCritters();
 
       critters = Critters.fromJson(crittersReponse.data);
-
+      
       for (int x = 0; x < critters.critters.length; x++) {
-        critterListName.add(critters.critters[x]['title']);
-      }
-
-      for (int x = 0; x < critterListName.length; x++) {
         final Response critter =
-          await ApiService.getCritter(critterListName[x]);
+          await ApiService.getCritter(critters.critters[x]['title']);
         critterList.add(Critter.fromJson(critter.data));
       }
 

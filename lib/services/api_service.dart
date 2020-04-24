@@ -23,5 +23,17 @@ class ApiService {
   static Future<Response> getCritter(String name) async {
     return Dio().get(Url.critter+name+'/'+Url.nookApi);
   }
+
+  static Future<Response> getTodayResponse() async {
+    return Dio().get(Url.todayMessage+Url.nookApi);
+  }
+
+  static Future<Response> getFossils() async {
+    return Dio().get(Url.fossilList);
+  }
+
+  static Future<Response> getFossil(String name) async {
+    return Dio().get(Url.fossil+name+'/'+Url.nookApi);
+  }
 }
 

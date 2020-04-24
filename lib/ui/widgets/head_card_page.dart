@@ -9,6 +9,7 @@ class HeadCardPage extends StatelessWidget {
   final String title, imageUrl;
   final Widget body;
   final double witdh, height;
+  final bool separator;
 
   HeadCardPage({
     @required this.title,
@@ -16,10 +17,12 @@ class HeadCardPage extends StatelessWidget {
     @required this.body,
     this.witdh,
     this.height,
+    this.separator,
   });
 
   @override
   Widget build(BuildContext context) {
+    print(body);
     return Card(
       elevation: 6,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
@@ -56,7 +59,7 @@ class HeadCardPage extends StatelessWidget {
                   height: height,
                   child: CacheImage(imageUrl),
                 ),
-          Separator.divider(),
+          !separator ? Separator.none() : Separator.divider(),
           body,
         ]),
       ),
