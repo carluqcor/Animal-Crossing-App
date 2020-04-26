@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_i18n/flutter_i18n.dart';
 import 'package:quick_actions/quick_actions.dart';
 
 import '../../providers/index.dart';
@@ -55,27 +56,36 @@ class _StartScreenState extends State<StartScreen> {
         currentIndex: _currentIndex,
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            title: Text('Home'),
+            title: Text(FlutterI18n.translate(
+              context,
+              'ac.home.title',
+            )),
             icon: Icon(Icons.home),
           ),
           BottomNavigationBarItem(
-              title: Text('Villagers'), icon: Icon(Icons.portrait)),
+            title: Text(FlutterI18n.translate(
+              context,
+              'ac.villagers.title',
+            )), 
+            icon: Icon(Icons.portrait)),
           BottomNavigationBarItem(
-            title: Text('Critters'),
+            title: Text(FlutterI18n.translate(
+              context,
+              'ac.critters.title',
+            )),
             icon: Icon(Octicons.bug),
           ),
           BottomNavigationBarItem(
-            title: Text('Fossils'),
+            title: Text(FlutterI18n.translate(
+              context,
+              'ac.fossils.title',
+            )),
             icon: Icon(Octicons.bug),
           ),
           /*BottomNavigationBarItem(
             title: Text('Flowers'),
             icon: Icon(Icons.home),
-          ),
-          BottomNavigationBarItem(
-            title: Text('Shiny'),
-            icon: Icon(Icons.home),
-          ),*/
+          )*/
         ],
       ),
     );

@@ -1,0 +1,53 @@
+{
+  "app": {
+    "title": "Guía de Bolsillo Animal Crossing",
+    "menu": {
+      "settings": "Ajustes",
+      "about": "Sobre"
+    }
+  },
+  "ac": {
+    "home": {
+      "title": "Inicio",
+      "today": "Mensaje del día"
+    },
+    "villagers": {
+      "title": "Aldean@s",
+      "details": {
+        "title": "Detalles",
+        "gender": "Género",
+        "personality": "Personalidad",
+        "species": "Especie",
+        "birthday": "Cumpleaños",
+        "skill": "Habilidad",
+        "goal": "Meta",
+        "fear": "Miedo",
+        "favorite_cloth": "Ropa Favorita",
+        "least_cloth": "Ropa menos Favorita",
+        "favorite_color": "Color Favorito"
+      }
+    },
+    "critters": {
+      "title": "Insectos",
+      "details": {
+        "title": "Detalles",
+        "time_year": "Temporada",
+        "available": "Disponible",
+        "time_day": "Hora del día",
+        "location": "Ubicación",
+        "size": "Tamaño",
+        "rarity": "Rareza",
+        "price": "Precio"
+      }
+    },
+    "fossils": {
+      "title": "Fósiles",
+      "details": {
+        "title": "Detalles",
+        "period": "Periodo",
+        "length": "Longitud",
+        "price": "Precio"
+      }
+    }
+  }
+}
