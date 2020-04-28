@@ -48,6 +48,18 @@
         "length": "Longitud",
         "price": "Precio"
       }
+    },
+    "search": {
+      "suggestion": {
+        "villager": "Búsqueda por el nombre del aldeano, especie, personalidad o color favorito",
+        "critter": "Búsqueda por el nombre del insecto o su rareza"
+      },
+      "failure": "No se han encontrado objetos"
+    },
+    "other": {
+      "tooltip": {
+        "search": "Búsqueda"
+      }
     }
   }
 }
