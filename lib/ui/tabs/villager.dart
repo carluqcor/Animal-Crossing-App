@@ -40,6 +40,57 @@ class VillagerTab extends StatelessWidget {
                   return Separator.divider(indent: 72);
                 },
               ),
+        /*floatingActionButton: FloatingActionButton(
+          heroTag: null,
+          tooltip: FlutterI18n.translate(
+            context,
+            'spacex.other.tooltip.search',
+          ),
+          onPressed: () => showSearch(
+            context: context,
+            delegate: SearchPage<VehicleInfo>(
+              items: model.villagerList,
+              searchLabel: FlutterI18n.translate(
+                context,
+                'spacex.other.tooltip.search',
+              ),
+              suggestion: BigTip(
+                title: Text(
+                  FlutterI18n.translate(
+                    context,
+                    'spacex.villager.title',
+                  ),
+                ),
+                subtitle: Text(
+                  FlutterI18n.translate(
+                    context,
+                    'spacex.search.suggestion.villager',
+                  ),
+                ),
+                child: Icon(Icons.search),
+              ),
+              failure: BigTip(
+                title: Text(
+                  FlutterI18n.translate(
+                    context,
+                    'spacex.vehicle.title',
+                  ),
+                ),
+                subtitle: Text(
+                  FlutterI18n.translate(
+                    context,
+                    'spacex.search.failure',
+                  ),
+                ),
+                child: Icon(Icons.sentiment_dissatisfied),
+              ),
+              filter: (vehicle) => [
+                vehicle.name,
+                vehicle.year,
+              ],
+            ),
+          ),
+        ),*/
       ),
     );
   }

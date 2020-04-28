@@ -22,7 +22,6 @@ class HeadCardPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print(body);
     return Card(
       elevation: 6,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),

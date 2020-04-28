@@ -1,0 +1,53 @@
+{
+  "app": {
+    "title": "Animal Crossing Pocket Guide",
+    "menu": {
+      "settings": "Settings",
+      "about": "About"
+    }
+  },
+  "ac": {
+    "home": {
+      "title": "Home",
+      "today": "Today message"
+    },
+    "villagers": {
+      "title": "Villagers",
+      "details": {
+        "title": "Details",
+        "gender": "Gender",
+        "personality": "Personality",
+        "species": "Species",
+        "birthday": "Birthday",
+        "skill": "Skill",
+        "goal": "Goal",
+        "fear": "Fear",
+        "favorite_cloth": "Favorite Clothing",
+        "least_cloth": "Least Favorite Clothing",
+        "favorite_color": "Favorite Color"
+      }
+    },
+    "critters": {
+      "title": "Critters",
+      "details": {
+        "title": "Details",
+        "time_year": "Time Year",
+        "available": "Available",
+        "time_day": "Time Day",
+        "location": "Location",
+        "size": "Size",
+        "rarity": "Rarity",
+        "price": "Price"
+      }
+    },
+    "fossils": {
+      "title": "Fossils",
+      "details": {
+        "title": "Details",
+        "period": "Period",
+        "length": "Length",
+        "price": "Price"
+      }
+    }
+  }
+}

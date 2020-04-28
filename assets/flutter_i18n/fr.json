@@ -1,0 +1,53 @@
+{
+  "app": {
+    "title": "Guide de Poche Animal Crossing",
+    "menu": {
+      "settings": "Réglages",
+      "about": "À Propos De"
+    }
+  },
+  "ac": {
+    "home": {
+      "title": "Début",
+      "today": "Message D'aujourd'hui"
+    },
+    "villagers": {
+      "title": "Villageois/es",
+      "details": {
+        "title": "Détails",
+        "gender": "Genre",
+        "personality": "Personnalité",
+        "species": "Espèce",
+        "birthday": "Anniversaire",
+        "skill": "Compétence",
+        "goal": "Objectif",
+        "fear": "Peur",
+        "favorite_cloth": "Vêtements Préférés",
+        "least_cloth": "Vêtements Moins Préférés",
+        "favorite_color": "Couleur Préférée"
+      }
+    },
+    "critters": {
+      "title": "Créatures",
+      "details": {
+        "title": "Détails",
+        "time_year": "Saison",
+        "available": "Disponible",
+        "time_day": "Jour de L'heure",
+        "location": "Emplacement",
+        "size": "Taille",
+        "rarity": "Rareté",
+        "price": "Prix"
+      }
+    },
+    "fossils": {
+      "title": "Fossiles",
+      "details": {
+        "title": "Détails",
+        "period": "Période",
+        "length": "Longueur",
+        "price": "Prix"
+      }
+    }
+  }
+}

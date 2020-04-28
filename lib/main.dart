@@ -1,5 +1,7 @@
 import 'package:ACApp/repositories/villager.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_i18n/flutter_i18n_delegate.dart';
+import 'package:flutter_i18n/loaders/file_translation_loader.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
 
@@ -28,6 +30,9 @@ class CherryApp extends StatelessWidget {
           darkTheme: model.requestTheme(Themes.dark),
           home: StartScreen(),
           localizationsDelegates: [
+            FlutterI18nDelegate(
+              translationLoader: FileTranslationLoader(fallbackFile: 'en'),
+            ),
             GlobalMaterialLocalizations.delegate,
             GlobalWidgetsLocalizations.delegate
           ],
