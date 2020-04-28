@@ -1,8 +1,11 @@
 import 'package:ACApp/ui/pages/index.dart';
 import 'package:ACApp/ui/widgets/index.dart';
 import 'package:ACApp/repositories/villager.dart';
+import 'package:big_tip/big_tip.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_i18n/flutter_i18n.dart';
 import 'package:provider/provider.dart';
+import 'package:search_page/search_page.dart';
 
 import '../widgets/index.dart';
 import '../../models/index.dart';
@@ -40,31 +43,32 @@ class VillagerTab extends StatelessWidget {
                   return Separator.divider(indent: 72);
                 },
               ),
-        /*floatingActionButton: FloatingActionButton(
+        floatingActionButton: FloatingActionButton(
+          child: Icon(Icons.search),
           heroTag: null,
           tooltip: FlutterI18n.translate(
             context,
-            'spacex.other.tooltip.search',
+            'ac.other.tooltip.search',
           ),
           onPressed: () => showSearch(
             context: context,
-            delegate: SearchPage<VehicleInfo>(
+            delegate: SearchPage<Villager>(
               items: model.villagerList,
               searchLabel: FlutterI18n.translate(
                 context,
-                'spacex.other.tooltip.search',
+                'ac.other.tooltip.search',
               ),
               suggestion: BigTip(
                 title: Text(
                   FlutterI18n.translate(
                     context,
-                    'spacex.villager.title',
+                    'ac.villagers.title',
                   ),
                 ),
                 subtitle: Text(
                   FlutterI18n.translate(
                     context,
-                    'spacex.search.suggestion.villager',
+                    'ac.search.suggestion.villager',
                   ),
                 ),
                 child: Icon(Icons.search),
@@ -73,24 +77,39 @@ class VillagerTab extends StatelessWidget {
                 title: Text(
                   FlutterI18n.translate(
                     context,
-                    'spacex.vehicle.title',
+                    'ac.villagers.title',
                   ),
                 ),
                 subtitle: Text(
                   FlutterI18n.translate(
                     context,
-                    'spacex.search.failure',
+                    'ac.search.failure',
                   ),
                 ),
                 child: Icon(Icons.sentiment_dissatisfied),
               ),
-              filter: (vehicle) => [
-                vehicle.name,
-                vehicle.year,
+              filter: (villager) => [
+                villager.name,
+                villager.species,
+                villager.personality,
+                villager.favColor,
               ],
+              builder: (villager) => ListTile(
+                leading: SizedBox(
+                  child: CacheImage(villager.image),
+                ),
+                title: Text(villager.name),
+                subtitle: Text(villager.quote),
+                onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (_) => VillagerPage(villager),
+                  ),
+                ),
+              ),
             ),
           ),
-        ),*/
+        ),
       ),
     );
   }

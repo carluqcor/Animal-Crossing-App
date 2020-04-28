@@ -1,9 +1,12 @@
 import 'package:ACApp/ui/pages/index.dart';
 import 'package:ACApp/ui/widgets/index.dart';
 import 'package:ACApp/util/index.dart';
+import 'package:big_tip/big_tip.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_i18n/flutter_i18n.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_icons/flutter_icons.dart';
+import 'package:search_page/search_page.dart';
 
 import '../widgets/index.dart';
 import '../../models/index.dart';
@@ -30,7 +33,12 @@ class CritterTab extends StatelessWidget {
                         child: CacheImage(critter.image),
                       ),
                       title: Text(critter.name),
-                      trailing: getAvailableCritter(date, critter.timeYear) || critter.timeYear == 'All year' ? Icon(FontAwesome.check_circle, color: Colors.greenAccent) : Icon(Entypo.circle_with_cross, color: Colors.redAccent),
+                      trailing: getAvailableCritter(date, critter.timeYear) ||
+                              critter.timeYear == 'All year'
+                          ? Icon(FontAwesome.check_circle,
+                              color: Colors.greenAccent)
+                          : Icon(Entypo.circle_with_cross,
+                              color: Colors.redAccent),
                       onTap: () => Navigator.push(
                         context,
                         MaterialPageRoute(
@@ -42,6 +50,72 @@ class CritterTab extends StatelessWidget {
                   return Separator.divider(indent: 72);
                 },
               ),
+        floatingActionButton: FloatingActionButton(
+          child: Icon(Icons.search),
+          heroTag: null,
+          tooltip: FlutterI18n.translate(
+            context,
+            'ac.other.tooltip.search',
+          ),
+          onPressed: () => showSearch(
+            context: context,
+            delegate: SearchPage<Critter>(
+                items: model.critterList,
+                searchLabel: FlutterI18n.translate(
+                  context,
+                  'ac.other.tooltip.search',
+                ),
+                suggestion: BigTip(
+                  title: Text(
+                    FlutterI18n.translate(
+                      context,
+                      'ac.critters.title',
+                    ),
+                  ),
+                  subtitle: Text(
+                    FlutterI18n.translate(
+                      context,
+                      'ac.search.suggestion.critter',
+                    ),
+                  ),
+                  child: Icon(Icons.search),
+                ),
+                failure: BigTip(
+                  title: Text(
+                    FlutterI18n.translate(
+                      context,
+                      'ac.critters.title',
+                    ),
+                  ),
+                  subtitle: Text(
+                    FlutterI18n.translate(
+                      context,
+                      'ac.search.failure',
+                    ),
+                  ),
+                  child: Icon(Icons.sentiment_dissatisfied),
+                ),
+                filter: (critter) => [critter.name, critter.rarity],
+                builder: (critter) => ListTile(
+                      leading: SizedBox(
+                        child: CacheImage(critter.image),
+                      ),
+                      title: Text(critter.name),
+                      trailing: getAvailableCritter(date, critter.timeYear) ||
+                              critter.timeYear == 'All year'
+                          ? Icon(FontAwesome.check_circle,
+                              color: Colors.greenAccent)
+                          : Icon(Entypo.circle_with_cross,
+                              color: Colors.redAccent),
+                      onTap: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => CritterPage(critter),
+                        ),
+                      ),
+                    )),
+          ),
+        ),
       ),
     );
   }

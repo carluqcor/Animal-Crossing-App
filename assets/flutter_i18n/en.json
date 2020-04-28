@@ -48,6 +48,18 @@
         "length": "Length",
         "price": "Price"
       }
+    },
+    "search": {
+      "suggestion": {
+        "villager": "Search by villager name, species, personality or favourite color",
+        "critter": "Search by critter name or rarity"
+      },
+      "failure": "No items were found"
+    },
+    "other": {
+      "tooltip": {
+        "search": "Search"
+      }
     }
   }
 }
