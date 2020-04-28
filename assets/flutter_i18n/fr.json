@@ -48,6 +48,18 @@
         "length": "Longueur",
         "price": "Prix"
       }
+    },
+    "search": {
+      "suggestion": {
+        "villager": "Recherche par nom de villageois, espèce, personnalité ou couleur préférée",
+        "critter": "Recherche par nom de créature ou rareté"
+      },
+      "failure": "Aucun élément n'a été trouvé"
+    },
+    "other": {
+      "tooltip": {
+        "search": "Chercher"
+      }
     }
   }
 }
