@@ -42,7 +42,7 @@ class CritterPage extends StatelessWidget {
                 Separator.spacer(),
                 RowItem.iconRowSet(
                   'Available',
-                  getAvailableCritter(date, _critter.timeYear) || _critter.timeYear == 'All year' ? Icon(FontAwesome.check_circle, color: Colors.greenAccent) : Icon(Entypo.circle_with_cross, color: Colors.redAccent),
+                  getAvailableCritter(date, _critter.timeYear, _critter.timeDay) || _critter.timeYear == 'All year' ? Icon(FontAwesome.check_circle, color: Colors.greenAccent) : Icon(Entypo.circle_with_cross, color: Colors.redAccent),
                 ),
                 Separator.spacer(),
                 RowItem.textRow(
