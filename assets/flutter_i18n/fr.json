@@ -49,6 +49,19 @@
         "price": "Prix"
       }
     },
+    "flowers":{
+      "title": "Flores",
+      "subtype": {
+        "windflower": "Anémone",
+        "pansy": "Pensée",
+        "tulip": "Tulipe",
+        "cosmo": "Cosmo",
+        "hyacinth": "Jacinthe",
+        "mum": "Crisantemo",
+        "lily": "Lis",
+        "rose": "Rose"
+      }
+    }, 
     "search": {
       "suggestion": {
         "villager": "Recherche par nom de villageois, espèce, personnalité ou couleur préférée",

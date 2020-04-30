@@ -16,9 +16,6 @@ class FlowerRepository extends BaseRepository {
       final Response crossbreedingResponse = await ApiService.getCrossbreeding();
 
       flowers = [for (final flower in crossbreedingResponse.data) Flower.fromJson(flower)];
-      
-      print('WGWOGWRGWOGWPGVNWG');
-      print(flowers);
 
       finishLoading();
     } catch (e) {

@@ -1,7 +1,7 @@
-import 'package:ACApp/repositories/flower.dart';
+import 'package:ACApp/ui/pages/index.dart';
+import 'package:ACApp/util/index.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:flutter_icons/flutter_icons.dart';
 
 import '../../repositories/index.dart';
 import '../widgets/index.dart';
@@ -21,26 +21,36 @@ class FlowerTab extends StatelessWidget {
             ? LoadingIndicator()
             : Column(children: <Widget>[
                 Center(
-                    child: GridView.count(
-                      shrinkWrap: true,
-                      crossAxisCount: model.flowers[0].x,
-                      primary: false,
-                      crossAxisSpacing: 2,
-                      mainAxisSpacing: 2,
-                      children: model.flowers[0].data
-                          .map((item) => Padding(
-                                padding: const EdgeInsets.all(16.0),
-                                child: GridTile(
-                                  child: new Container(
-                                    alignment: Alignment.center,
-                                    child: SizedBox(
-                                      child: Image(image: AssetImage('assets/flowers/Flw'+model.flowers[0].nameEn+item+'.png')),
-                                    ),
-                                  ),
+                  child: new GridView.builder(
+                    itemCount: model.flowers.length,
+                    shrinkWrap: true,
+                    gridDelegate: new SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                      crossAxisSpacing: 4,
+                    ),
+                    itemBuilder: (BuildContext context, int index) {
+                      return new Card(
+                        child: new GridTile(
+                            footer: new Text(getFlowerName(model.flowers[index].name, context)),
+                            child: new InkResponse(
+                              enableFeedback: true,
+                              child: Image(
+                                  image: AssetImage('assets/flowers/Flw' +
+                                      model.flowers[index].name +
+                                      model.flowers[index].buyable[0] +
+                                      '.png')),
+                              onTap: () => Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (_) =>
+                                      FlowerPage(model.flowers[index]),
                                 ),
-                              ))
-                          .toList(),
-                    )),
+                              ),
+                            )),
+                      );
+                    },
+                  ),
+                )
               ]),
       ),
     );

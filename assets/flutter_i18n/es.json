@@ -49,6 +49,19 @@
         "price": "Precio"
       }
     },
+    "flowers":{
+      "title": "Flores",
+      "subtype": {
+        "windflower": "Anémona",
+        "pansy": "Viola",
+        "tulip": "Tulipán",
+        "cosmo": "Cosmo",
+        "hyacinth": "Jacinto",
+        "mum": "Crisantemo",
+        "lily": "Lirio",
+        "rose": "Rosa"
+      }
+    }, 
     "search": {
       "suggestion": {
         "villager": "Búsqueda por el nombre del aldeano, especie, personalidad o color favorito",

@@ -7,5 +7,5 @@ class Url {
   static const villagerList = 'https://nookipedia.com/w/api.php?action=query&list=categorymembers&&cmlimit=5&cmtitle=Category:New_Horizons_characters&format=json';
   static const critterList = 'https://nookipedia.com/w/api.php?action=query&list=categorymembers&&cmlimit=10&cmtitle=Category:New_Horizons_bugs&format=json';
   static const fossilList = 'https://nookipedia.com/w/api.php?action=query&list=categorymembers&&cmlimit=10&cmtitle=Category:New_Horizons_fossils&format=json';
-  static const flowers =  'https://jsonblob.com/api/cf98f4c9-8adb-11ea-a9b5-b78233a401a9';
+  static const flowers =  'https://jsonblob.com/api/528d029e-8b0d-11ea-a9b5-b3f63dbadc63';
 }

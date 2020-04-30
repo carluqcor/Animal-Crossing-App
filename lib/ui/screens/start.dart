@@ -89,9 +89,9 @@ class _StartScreenState extends State<StartScreen> {
           BottomNavigationBarItem(
             title: Text(FlutterI18n.translate(
               context,
-              'ac.fossils.title',
+              'ac.flowers.title',
             )),
-            icon: Icon(Octicons.bug),
+            icon: Icon(Entypo.flower),
           ),
           /*BottomNavigationBarItem(
             title: Text('Flowers'),
