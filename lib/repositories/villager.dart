@@ -14,16 +14,11 @@ class VillagerRepository extends BaseRepository {
   Future<void> loadData() async {
     // Try to load the data using [ApiService]
     try {
-      // Receives the data and parse it
-      final Response villagersReponse = await ApiService.getVillagers();
+      final Response villagersReponse = await ApiService.getVillager();
 
-      villagers = Villagers.fromJson(villagersReponse.data);
-
-      for (int x = 0; x < villagers.villagers.length; x++) {
-        final Response villager =
-          await ApiService.getVillager(villagers.villagers[x]['title']);
-        villagerList.add(Villager.fromJson(villager.data));
-      }
+      villagerList = [
+        for (final villager in villagersReponse.data) Villager.fromJson(villager)
+      ];
 
       finishLoading();
     } on DioError catch (e) {

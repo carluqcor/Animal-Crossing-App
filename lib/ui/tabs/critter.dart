@@ -33,7 +33,7 @@ class CritterTab extends StatelessWidget {
                         child: CacheImage(critter.image),
                       ),
                       title: Text(critter.name),
-                      trailing: getAvailableCritter(date, critter.timeYear) ||
+                      trailing: getAvailableCritter(date, critter.timeYear, critter.timeDay) ||
                               critter.timeYear == 'All year'
                           ? Icon(FontAwesome.check_circle,
                               color: Colors.greenAccent)
@@ -101,7 +101,7 @@ class CritterTab extends StatelessWidget {
                         child: CacheImage(critter.image),
                       ),
                       title: Text(critter.name),
-                      trailing: getAvailableCritter(date, critter.timeYear) ||
+                      trailing: getAvailableCritter(date, critter.timeYear, critter.timeDay) ||
                               critter.timeYear == 'All year'
                           ? Icon(FontAwesome.check_circle,
                               color: Colors.greenAccent)
