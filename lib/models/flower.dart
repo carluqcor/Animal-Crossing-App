@@ -1,6 +1,6 @@
 class Flower {
-  final String nameEs, nameEn, buyable;
-  final List<String> data;
+  final String nameEs, nameEn;
+  final List<String> data, buyable;
   final int x, y;
 
   const Flower({
@@ -13,13 +13,12 @@ class Flower {
   });
 
   factory Flower.fromJson(Map<String, dynamic> json) {
-    print(json['nameEs']);
-    print('000000');
+    print(json);
     return Flower(
       nameEs: json['nameEs'],
       nameEn: json['nameEn'],
-      buyable: json['buyable'],
-      data: json['crossbreeding']['data'],
+      buyable: json['buyable'].cast<String>(),
+      data: json['crossbreeding']['data'].cast<String>(),
       x: json['crossbreeding']['layout']['x'],
       y: json['crossbreeding']['layout']['y'],
     );

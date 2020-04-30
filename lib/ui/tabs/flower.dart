@@ -23,18 +23,18 @@ class FlowerTab extends StatelessWidget {
                 Center(
                     child: GridView.count(
                       shrinkWrap: true,
-                      crossAxisCount: model.flower.x,
+                      crossAxisCount: model.flowers[0].x,
                       primary: false,
-                      crossAxisSpacing: 10,
-                      mainAxisSpacing: 4,
-                      children: model.flower.data
+                      crossAxisSpacing: 2,
+                      mainAxisSpacing: 2,
+                      children: model.flowers[0].data
                           .map((item) => Padding(
                                 padding: const EdgeInsets.all(16.0),
                                 child: GridTile(
                                   child: new Container(
                                     alignment: Alignment.center,
                                     child: SizedBox(
-                                      child: CacheImage(item),
+                                      child: Image(image: AssetImage('assets/flowers/Flw'+model.flowers[0].nameEn+item+'.png')),
                                     ),
                                   ),
                                 ),

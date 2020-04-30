@@ -65,6 +65,5 @@ flutter:
   assets:
     - assets/flutter_i18n/
     - assets/flowers/
-    - assets/crossbreeding.json
 
   uses-material-design: true

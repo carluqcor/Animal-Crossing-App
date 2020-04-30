@@ -7,7 +7,7 @@ import '../models/index.dart';
 import 'index.dart';
 
 class FlowerRepository extends BaseRepository {
-  Flower flower;
+  List<Flower> flowers = [];
 
   @override
   Future loadData() async {
@@ -15,9 +15,10 @@ class FlowerRepository extends BaseRepository {
     try {
       final Response crossbreedingResponse = await ApiService.getCrossbreeding();
 
-      //final crossbreedingDecoded = json.decode(crossbreedingResponse);
+      flowers = [for (final flower in crossbreedingResponse.data) Flower.fromJson(flower)];
       
-      flower = Flower.fromJson(crossbreedingResponse.data);
+      print('WGWOGWRGWOGWPGVNWG');
+      print(flowers);
 
       finishLoading();
     } catch (e) {
