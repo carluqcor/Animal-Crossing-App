@@ -33,6 +33,9 @@ class _StartScreenState extends State<StartScreen> {
         case 'fossils':
           setState(() => _currentIndex = 3);
           break;
+        case 'flowers':
+          setState(() => _currentIndex = 4);
+          break;
         default:
           setState(() => _currentIndex = 0);
       }
@@ -47,6 +50,7 @@ class _StartScreenState extends State<StartScreen> {
         VillagerTab(),
         CritterTab(),
         FossilTab(),
+        FlowerTab(),
       ]),
       bottomNavigationBar: BottomNavigationBar(
         selectedLabelStyle: TextStyle(fontFamily: 'ProductSans'),
@@ -72,6 +76,13 @@ class _StartScreenState extends State<StartScreen> {
             title: Text(FlutterI18n.translate(
               context,
               'ac.critters.title',
+            )),
+            icon: Icon(Octicons.bug),
+          ),
+          BottomNavigationBarItem(
+            title: Text(FlutterI18n.translate(
+              context,
+              'ac.fossils.title',
             )),
             icon: Icon(Octicons.bug),
           ),

@@ -1,0 +1,30 @@
+[
+  {
+    "nameEs": "Rosa",
+    "nameEn": "Rose",
+    "buyable": ["White", "Red", "Yellow"],
+    "crossbreeding": {
+      "layout": {
+        "x": 3,
+        "y": 4
+      },
+      "data": [
+        "Red",
+        "White",
+        "Pink",
+        "Red",
+        "Yellow",
+        "Orange",
+        "White",
+        "White",
+        "Purple",
+        "Red",
+        "Red",
+        "Black",
+        "Orange",
+        "Orange",
+        "Blue"
+      ]
+    }
+  }
+]
