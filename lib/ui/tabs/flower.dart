@@ -19,19 +19,23 @@ class FlowerTab extends StatelessWidget {
         ),
         body: model.isLoading
             ? LoadingIndicator()
-            : Column(children: <Widget>[
-                Center(
-                  child: new GridView.builder(
+            : Column(
+                children: <Widget>[
+                  new GridView.builder(
                     itemCount: model.flowers.length,
                     shrinkWrap: true,
+                    controller: new ScrollController(keepScrollOffset: false),
                     gridDelegate: new SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2,
                       crossAxisSpacing: 4,
+                      childAspectRatio: MediaQuery.of(context).size.width /
+                          (MediaQuery.of(context).size.height / 4),
                     ),
                     itemBuilder: (BuildContext context, int index) {
                       return new Card(
                         child: new GridTile(
-                            footer: new Text(getFlowerName(model.flowers[index].name, context)),
+                            footer: new Text(getFlowerName(
+                                model.flowers[index].name, context)),
                             child: new InkResponse(
                               enableFeedback: true,
                               child: Image(
@@ -50,8 +54,8 @@ class FlowerTab extends StatelessWidget {
                       );
                     },
                   ),
-                )
-              ]),
+                ],
+              ),
       ),
     );
   }

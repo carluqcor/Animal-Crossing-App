@@ -26,28 +26,29 @@ class FlowerPage extends StatelessWidget {
             : Column(children: <Widget>[
                 Center(
                     child: GridView.count(
-                      shrinkWrap: true,
-                      crossAxisCount: _flower.x,
-                      primary: false,
-                      crossAxisSpacing: 0,
-                      mainAxisSpacing: 0,
-                      children: _flower.data
-                          .map((item) => Padding(
-                                padding: const EdgeInsets.all(2.0),
-                                child: GridTile(
-                                  child: new Container(
-                                    alignment: Alignment.center,
-                                    child: SizedBox(
-                                      child: getFlowerIcon(item, _flower.name),
-                                    ),
-                                  ),
+                  shrinkWrap: true,
+                  crossAxisCount: _flower.x,
+                  childAspectRatio: MediaQuery.of(context).size.width /
+                          (MediaQuery.of(context).size.height / 1.5),
+                  primary: false,
+                  crossAxisSpacing: 0,
+                  mainAxisSpacing: 0,
+                  children: _flower.data
+                      .map((item) => Padding(
+                            padding: const EdgeInsets.all(2.0),
+                            child: GridTile(
+                              child: new Container(
+                                alignment: Alignment.center,
+                                child: SizedBox(
+                                  child: getFlowerIcon(item, _flower.name),
                                 ),
-                              ))
-                          .toList(),
-                    )),
+                              ),
+                            ),
+                          ))
+                      .toList(),
+                )),
               ]),
       ),
     );
   }
 }
-
