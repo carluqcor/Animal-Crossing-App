@@ -64,5 +64,6 @@ flutter:
         - asset: assets/fonts/ProductSans-Regular.ttf
   assets:
     - assets/flutter_i18n/
+    - assets/flowers/
 
   uses-material-design: true

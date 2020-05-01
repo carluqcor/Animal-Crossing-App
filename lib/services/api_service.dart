@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:flutter/services.dart';
 
 import '../util/url.dart';
 import '../models/index.dart';
@@ -31,6 +32,12 @@ class ApiService {
 
   static Future<Response> getFossil(String name) async {
     return Dio().get(Url.fossil+name+'/'+Url.nookApi);
+  }
+  /*static Future<String> getCrossbreeding() async {
+    return await rootBundle.loadString('assets/crossbreeding.json');
+  }*/
+  static Future<Response> getCrossbreeding() async {
+    return Dio().get(Url.flowers);
   }
 }
 

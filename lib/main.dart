@@ -1,3 +1,4 @@
+import 'package:ACApp/repositories/flower.dart';
 import 'package:ACApp/repositories/villager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_i18n/flutter_i18n_delegate.dart';
@@ -22,6 +23,7 @@ class CherryApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => CritterRepository()),
         ChangeNotifierProvider(create: (_) => TodayRepository()),
         ChangeNotifierProvider(create: (_) => FossilRepository()),
+        ChangeNotifierProvider(create: (_) => FlowerRepository()),
       ],
       child: Consumer<ThemeProvider>(
         builder: (context, model, child) => MaterialApp(

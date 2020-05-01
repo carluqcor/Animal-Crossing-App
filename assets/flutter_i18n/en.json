@@ -49,6 +49,19 @@
         "price": "Price"
       }
     },
+    "flowers":{
+      "title": "Flowers",
+      "subtype": {
+        "windflower": "Windflower",
+        "pansy": "Pansies",
+        "tulip": "Tulip",
+        "cosmo": "Cosmo",
+        "hyacinth": "Hyacinth",
+        "mum": "Mum",
+        "lily": "Lily",
+        "rose": "Rose"
+      }
+    }, 
     "search": {
       "suggestion": {
         "villager": "Search by villager name, species, personality or favourite color",
