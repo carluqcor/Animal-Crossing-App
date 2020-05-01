@@ -29,13 +29,19 @@ class FlowerTab extends StatelessWidget {
                       crossAxisCount: 2,
                       crossAxisSpacing: 4,
                       childAspectRatio: MediaQuery.of(context).size.width /
-                          (MediaQuery.of(context).size.height / 4),
+                          (MediaQuery.of(context).size.height / 3),
                     ),
                     itemBuilder: (BuildContext context, int index) {
                       return new Card(
                         child: new GridTile(
-                            footer: new Text(getFlowerName(
-                                model.flowers[index].name, context)),
+                            header: new Text(
+                              getFlowerName(model.flowers[index].name, context),
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .subhead
+                                  .copyWith(),
+                              textAlign: TextAlign.center,
+                            ),
                             child: new InkResponse(
                               enableFeedback: true,
                               child: Image(

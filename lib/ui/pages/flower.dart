@@ -18,7 +18,7 @@ class FlowerPage extends StatelessWidget {
     return Consumer<FlowerRepository>(
       builder: (context, model, child) => Scaffold(
         appBar: AppBar(
-          title: const Text('Animal Crossing: New Horizons'),
+          title: Text(getFlowerName(_flower.name, context)),
           centerTitle: true,
         ),
         body: model.isLoading
@@ -29,7 +29,7 @@ class FlowerPage extends StatelessWidget {
                   shrinkWrap: true,
                   crossAxisCount: _flower.x,
                   childAspectRatio: MediaQuery.of(context).size.width /
-                          (MediaQuery.of(context).size.height / 1.5),
+                      (MediaQuery.of(context).size.height / 1.5),
                   primary: false,
                   crossAxisSpacing: 0,
                   mainAxisSpacing: 0,
