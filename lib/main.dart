@@ -31,6 +31,10 @@ class CherryApp extends StatelessWidget {
           theme: model.requestTheme(Themes.light),
           darkTheme: model.requestTheme(Themes.dark),
           home: StartScreen(),
+          routes: <String, WidgetBuilder>{
+            //'/about': (_) => const AboutScreen(),
+            '/settings': (_) => const SettingsScreen(),
+          },
           localizationsDelegates: [
             FlutterI18nDelegate(
               translationLoader: FileTranslationLoader(fallbackFile: 'en'),

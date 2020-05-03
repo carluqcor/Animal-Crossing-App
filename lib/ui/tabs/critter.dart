@@ -1,4 +1,5 @@
 import 'package:ACApp/ui/pages/index.dart';
+import 'package:ACApp/ui/screens/index.dart';
 import 'package:ACApp/ui/widgets/index.dart';
 import 'package:ACApp/util/index.dart';
 import 'package:big_tip/big_tip.dart';
@@ -12,14 +13,37 @@ import '../widgets/index.dart';
 import '../../models/index.dart';
 import '../../repositories/index.dart';
 
-/// This tab holds information about SpaceX-as-a-company,
-/// such as various numbers & achievements.
 class CritterTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var date = new DateTime.now();
     return Consumer<CritterRepository>(
       builder: (context, model, child) => Scaffold(
+        appBar: AppBar(
+          title: Text(
+            FlutterI18n.translate(
+              context,
+              'ac.critters.title',
+            ),
+          ),
+          actions: <Widget>[
+            IconButton(
+              icon: Icon(
+                Icons.settings,
+                color: Colors.white,
+              ),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (_) => SettingsScreen(),
+                  ),
+                );
+              },
+            )
+          ],
+          centerTitle: true,
+        ),
         body: model.isLoading
             ? LoadingIndicator()
             : ListView.separated(
@@ -33,12 +57,13 @@ class CritterTab extends StatelessWidget {
                         child: CacheImage(critter.image),
                       ),
                       title: Text(critter.name),
-                      trailing: getAvailableCritter(date, critter.timeYear, critter.timeDay) ||
+                      trailing: getAvailableCritter(
+                                  date, critter.timeYear, critter.timeDay) ||
                               critter.timeYear == 'All year'
                           ? Icon(FontAwesome.check_circle,
-                              color: Colors.greenAccent)
+                              color: acceptIcon)
                           : Icon(Entypo.circle_with_cross,
-                              color: Colors.redAccent),
+                              color: denyIcon),
                       onTap: () => Navigator.push(
                         context,
                         MaterialPageRoute(
@@ -101,7 +126,8 @@ class CritterTab extends StatelessWidget {
                         child: CacheImage(critter.image),
                       ),
                       title: Text(critter.name),
-                      trailing: getAvailableCritter(date, critter.timeYear, critter.timeDay) ||
+                      trailing: getAvailableCritter(
+                                  date, critter.timeYear, critter.timeDay) ||
                               critter.timeYear == 'All year'
                           ? Icon(FontAwesome.check_circle,
                               color: Colors.greenAccent)

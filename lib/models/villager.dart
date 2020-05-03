@@ -1,10 +1,3 @@
-import 'dart:ffi';
-
-import 'package:ACApp/models/index.dart';
-import 'package:ACApp/services/api_service.dart';
-import 'package:flutter/material.dart';
-import 'package:dio/dio.dart';
-
 class Villagers {
   final List<dynamic> villagers;
 

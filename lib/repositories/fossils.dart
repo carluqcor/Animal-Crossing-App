@@ -2,7 +2,6 @@ import 'package:ACApp/repositories/base.dart';
 import 'package:ACApp/services/api_service.dart';
 import 'package:dio/dio.dart';
 import '../models/index.dart';
-import 'index.dart';
 
 class FossilRepository extends BaseRepository {
   List<Fossil> fossilList = [];

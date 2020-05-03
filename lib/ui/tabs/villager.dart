@@ -1,6 +1,8 @@
 import 'package:ACApp/ui/pages/index.dart';
+import 'package:ACApp/ui/screens/index.dart';
 import 'package:ACApp/ui/widgets/index.dart';
 import 'package:ACApp/repositories/villager.dart';
+import 'package:ACApp/util/index.dart';
 import 'package:big_tip/big_tip.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_i18n/flutter_i18n.dart';
@@ -11,13 +13,36 @@ import '../widgets/index.dart';
 import '../../models/index.dart';
 import '../../repositories/index.dart';
 
-/// This tab holds information about SpaceX-as-a-company,
-/// such as various numbers & achievements.
 class VillagerTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Consumer<VillagerRepository>(
       builder: (context, model, child) => Scaffold(
+        appBar: AppBar(
+          title: Text(
+            FlutterI18n.translate(
+              context,
+              'ac.villagers.title',
+            ),
+          ),
+          actions: <Widget>[
+            IconButton(
+              icon: Icon(
+                Icons.settings,
+                color: Colors.white,
+              ),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (_) => SettingsScreen(),
+                  ),
+                );
+              },
+            )
+          ],
+          centerTitle: true,
+        ),
         body: model.isLoading
             ? LoadingIndicator()
             : ListView.separated(

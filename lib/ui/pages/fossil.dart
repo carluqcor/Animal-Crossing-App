@@ -1,9 +1,5 @@
-import 'package:ACApp/util/get_color.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_icons/flutter_icons.dart';
-
 import '../../models/index.dart';
-import '../../util/index.dart';
 import '../widgets/index.dart';
 
 /// COCKTAIL PAGE VIEW
@@ -11,7 +7,7 @@ import '../widgets/index.dart';
 /// instructions, ingredients and measure
 class FossilPage extends StatelessWidget {
   final Fossil _fossil;
-  var date = new DateTime.now();
+  final date = new DateTime.now();
   FossilPage(this._fossil);
 
   @override

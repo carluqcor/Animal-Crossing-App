@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_i18n/flutter_i18n.dart';
 import 'package:quick_actions/quick_actions.dart';
-
-import '../../providers/index.dart';
-import '../../repositories/index.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import '../tabs/index.dart';
 
