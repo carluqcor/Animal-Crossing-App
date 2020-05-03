@@ -1,20 +1,41 @@
 import 'package:ACApp/ui/pages/index.dart';
+import 'package:ACApp/ui/screens/index.dart';
 import 'package:ACApp/util/index.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_i18n/flutter_i18n.dart';
 import 'package:provider/provider.dart';
 
 import '../../repositories/index.dart';
 import '../widgets/index.dart';
 
-/// This tab holds information about SpaceX-as-a-company,
-/// such as various numbers & achievements.
 class FlowerTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Consumer<FlowerRepository>(
       builder: (context, model, child) => Scaffold(
         appBar: AppBar(
-          title: const Text('Animal Crossing: New Horizons'),
+          title: Text(
+            FlutterI18n.translate(
+              context,
+              'ac.flowers.title',
+            ),
+          ),
+          actions: <Widget>[
+            IconButton(
+              icon: Icon(
+                Icons.settings,
+                color: Colors.white,
+              ),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (_) => SettingsScreen(),
+                  ),
+                );
+              },
+            )
+          ],
           centerTitle: true,
         ),
         body: model.isLoading

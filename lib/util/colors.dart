@@ -5,6 +5,20 @@ import 'package:flutter/material.dart';
 /// LIGHT THEME
 const lightPrimaryColor = Color(0xFF1E1E1E);
 const lightAccentColor = Color(0xFF3949AB);
+const lightBackgroundColor = Color(0xFFC8E6C9);
+const lightCardColor = Color(0xFFE8F5E9);
+const lightCanvasColor = Color(0xFFA5D6A7);
+
+/*
+
+const darkPrimaryColor = Color(0xFF151515);
+const darkAccentColor = Color(0xFFFBC02D);
+const darkBackgroundColor = Color(0xFFC8E6C9);
+const darkCanvasColor = Color(0xFF272727);
+const darkCardColor = Color(0xFFE8F5E9);
+const darkDividerColor = Color(0xFF424242);
+
+ */
 
 /// DARK THEME
 const darkPrimaryColor = Color(0xFF151515);

@@ -7,8 +7,6 @@ import 'package:provider/provider.dart';
 import '../../repositories/index.dart';
 import '../widgets/index.dart';
 
-/// This tab holds information about SpaceX-as-a-company,
-/// such as various numbers & achievements.
 class FlowerPage extends StatelessWidget {
   final Flower _flower;
   FlowerPage(this._flower);

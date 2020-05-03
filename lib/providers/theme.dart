@@ -5,14 +5,18 @@ import '../util/colors.dart';
 
 enum Themes { light, dark, black, system }
 
-const Themes _defaultTheme = Themes.dark;
+const Themes _defaultTheme = Themes.light;
 
 final Map<Themes, ThemeData> _themeData = {
   Themes.light: ThemeData(
     brightness: Brightness.light,
     primaryColor: lightPrimaryColor,
     accentColor: lightAccentColor,
+    canvasColor: lightCanvasColor,
+    scaffoldBackgroundColor: lightBackgroundColor,
+    cardColor: lightCardColor,
     popupMenuTheme: PopupMenuThemeData(
+      color: lightCardColor,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(6),
       ),

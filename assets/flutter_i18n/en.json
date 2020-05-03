@@ -74,5 +74,34 @@
         "search": "Search"
       }
     }
+  },
+  "settings": {
+    "headers": {
+      "services": "Services",
+      "general": "General"
+    },
+    "theme": {
+      "title": "Appearance",
+      "body": "Choose between light or dark",
+      "theme": {
+        "dark": "Dark theme",
+        "black": "Black theme",
+        "light": "Light theme",
+        "system": "System theme"
+      }
+    },
+    "image_quality": {
+      "title": "Image quality",
+      "body": "Adjust image resolution",
+      "quality": {
+        "low": "Low",
+        "medium": "Medium",
+        "high": "High"
+      }
+    },
+    "notifications": {
+      "title": "Notifications",
+      "body": "Adjust launch announcements"
+    }
   }
 }

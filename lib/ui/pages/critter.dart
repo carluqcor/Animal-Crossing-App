@@ -11,7 +11,7 @@ import '../widgets/index.dart';
 /// instructions, ingredients and measure
 class CritterPage extends StatelessWidget {
   final Critter _critter;
-  var date = new DateTime.now();
+  final date = new DateTime.now();
   CritterPage(this._critter);
 
   @override
