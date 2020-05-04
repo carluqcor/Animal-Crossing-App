@@ -44,37 +44,38 @@ class CritterTab extends StatelessWidget {
           ],
           centerTitle: true,
         ),
-        body: model.isLoading
-            ? LoadingIndicator()
-            : ListView.separated(
-                itemCount: model.critterList?.length,
-                separatorBuilder: (context, index) => Divider(),
-                itemBuilder: (context, index) {
-                  final Critter critter = model.getCritter(index);
-                  if (critter.image != null) {
-                    return ListTile(
-                      leading: SizedBox(
-                        child: CacheImage(critter.image),
-                      ),
-                      title: Text(critter.name),
-                      trailing: getAvailableCritter(
-                                  date, critter.timeYear, critter.timeDay) ||
-                              critter.timeYear == 'All year'
-                          ? Icon(FontAwesome.check_circle,
-                              color: acceptIcon)
-                          : Icon(Entypo.circle_with_cross,
-                              color: denyIcon),
-                      onTap: () => Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (_) => CritterPage(critter),
+        body: RefreshIndicator(
+          onRefresh: () => onRefresh(context, model),
+          child: model.isLoading
+              ? LoadingIndicator()
+              : ListView.separated(
+                  itemCount: model.critterList?.length,
+                  separatorBuilder: (context, index) => Divider(),
+                  itemBuilder: (context, index) {
+                    final Critter critter = model.getCritter(index);
+                    if (critter.image != null) {
+                      return ListTile(
+                        leading: SizedBox(
+                          child: CacheImage(critter.image),
                         ),
-                      ),
-                    );
-                  }
-                  return Separator.divider(indent: 72);
-                },
-              ),
+                        title: Text(critter.name),
+                        trailing: getAvailableCritter(
+                                    date, critter.timeYear, critter.timeDay) ||
+                                critter.timeYear == 'All year'
+                            ? Icon(FontAwesome.check_circle, color: acceptIcon)
+                            : Icon(Entypo.circle_with_cross, color: denyIcon),
+                        onTap: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (_) => CritterPage(critter),
+                          ),
+                        ),
+                      );
+                    }
+                    return Separator.divider(indent: 72);
+                  },
+                ),
+        ),
         floatingActionButton: FloatingActionButton(
           child: Icon(Icons.search),
           heroTag: null,
