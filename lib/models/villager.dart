@@ -1,14 +1,10 @@
 class Villagers {
   final List<dynamic> villagers;
 
-  const Villagers({
-    this.villagers
-  });
+  const Villagers({this.villagers});
 
   factory Villagers.fromJson(Map<String, dynamic> json) {
-    return Villagers(
-      villagers: json['query']['categorymembers']
-    );
+    return Villagers(villagers: json['query']['categorymembers']);
   }
 
   String getName(villager) {
@@ -35,25 +31,25 @@ class Villager {
       link;
   //final DateTime updated;
 
-  const Villager(
-      {this.name,
-      this.image,
-      this.quote,
-      this.gender,
-      this.personality,
-      this.species,
-      this.birthday,
-      this.islanderFavorite,
-      this.islanderAllergic,
-      this.skill,
-      this.goal,
-      this.fear,
-      this.favClothing,
-      this.leastFavClothing,
-      this.favColor,
-      this.link,
-      //this.updated
-      });
+  const Villager({
+    this.name,
+    this.image,
+    this.quote,
+    this.gender,
+    this.personality,
+    this.species,
+    this.birthday,
+    this.islanderFavorite,
+    this.islanderAllergic,
+    this.skill,
+    this.goal,
+    this.fear,
+    this.favClothing,
+    this.leastFavClothing,
+    this.favColor,
+    this.link,
+    //this.updated
+  });
 
   factory Villager.fromJson(Map<String, dynamic> json) {
     return Villager(

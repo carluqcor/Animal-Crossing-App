@@ -1,6 +1,8 @@
 import 'package:ACApp/repositories/base.dart';
 import 'package:ACApp/services/api_service.dart';
+import 'package:ACApp/util/index.dart';
 import 'package:dio/dio.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import '../models/index.dart';
 
 class VillagerRepository extends BaseRepository {
@@ -16,7 +18,8 @@ class VillagerRepository extends BaseRepository {
       final Response villagersReponse = await ApiService.getVillager();
 
       villagerList = [
-        for (final villager in villagersReponse.data) Villager.fromJson(villager)
+        for (final villager in villagersReponse.data)
+          Villager.fromJson(villager)
       ];
 
       finishLoading();
@@ -26,6 +29,14 @@ class VillagerRepository extends BaseRepository {
     }
   }
 
-  Villager getVillager(int index) => villagerList[index];
+  dynamic villagerGetter(String key) async {
+    final prefs = await SharedPreferences.getInstance();
+    try {
+      return prefs.getStringList(key)?.length;
+    } catch (_) {
+      return villagerList?.length;
+    }
+  }
 
+  Villager getVillager(int index) => villagerList[index];
 }
