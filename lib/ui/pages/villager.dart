@@ -11,11 +11,21 @@ import '../widgets/index.dart';
 /// instructions, ingredients and measure
 class VillagerPage extends StatelessWidget {
   final Villager _villager;
+  SharedPreferences prefs;
+  List<String> villagersSelected;
 
   VillagerPage(this._villager);
 
   @override
   Widget build(BuildContext context) {
+    Future<bool> _saveList() async {
+      return await prefs.setStringList("key", villagersSelected);
+    }
+
+    List<String> _getList() {
+      return prefs.getStringList("key");
+    }
+
     return Scaffold(
       appBar: AppBar(title: Text(_villager.name), centerTitle: true),
       body: ListView(
@@ -39,6 +49,28 @@ class VillagerPage extends StatelessWidget {
             title: 'DETAILS',
             body: Column(
               children: <Widget>[
+                _villager.gender != null
+                    ? RowItem(
+                        'Custom',
+                        ToggleSwitch(
+                            minWidth: 45.0,
+                            cornerRadius: 5,
+                            activeBgColor: Colors.green,
+                            activeTextColor: Colors.white,
+                            inactiveBgColor: Colors.grey,
+                            inactiveTextColor: Colors.white,
+                            labels: ['NO', 'YES'],
+                            icons: [FontAwesome.check, FontAwesome.times],
+                            onToggle: (index) {
+                              if(index == 0)
+                                removePreferences(_villager.name, 'villager');
+                              else 
+                                savePreferences(_villager.name, 'villager');
+                                print(readPreferences('villager'));
+                            }),
+                      )
+                    : Separator.none(),
+                Separator.spacer(),
                 _villager.gender != null
                     ? RowItem.iconRowSet(
                         'Gender',
