@@ -43,31 +43,34 @@ class VillagerTab extends StatelessWidget {
           ],
           centerTitle: true,
         ),
-        body: model.isLoading
-            ? LoadingIndicator()
-            : ListView.separated(
-                itemCount: model.villagerList?.length,
-                separatorBuilder: (context, index) => Divider(),
-                itemBuilder: (context, index) {
-                  final Villager villager = model.getVillager(index);
-                  if (villager.image != null) {
-                    return ListTile(
-                      leading: SizedBox(
-                        child: CacheImage(villager.image),
-                      ),
-                      title: Text(villager.name),
-                      subtitle: Text(villager.quote),
-                      onTap: () => Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (_) => VillagerPage(villager),
+        body: RefreshIndicator(
+          onRefresh: () => onRefresh(context, model),
+          child: model.isLoading
+              ? LoadingIndicator()
+              : ListView.separated(
+                  itemCount: model.villagerList?.length,
+                  separatorBuilder: (context, index) => Divider(),
+                  itemBuilder: (context, index) {
+                    final Villager villager = model.getVillager(index);
+                    if (villager.image != null) {
+                      return ListTile(
+                        leading: SizedBox(
+                          child: CacheImage(villager.image),
                         ),
-                      ),
-                    );
-                  }
-                  return Separator.divider(indent: 72);
-                },
-              ),
+                        title: Text(villager.name),
+                        subtitle: Text(villager.quote),
+                        onTap: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (_) => VillagerPage(villager),
+                          ),
+                        ),
+                      );
+                    }
+                    return Separator.divider(indent: 72);
+                  },
+                ),
+        ),
         floatingActionButton: FloatingActionButton(
           child: Icon(Icons.search),
           heroTag: null,

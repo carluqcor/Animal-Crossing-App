@@ -4,7 +4,7 @@ import 'package:flutter_i18n/flutter_i18n.dart';
 import '../../repositories/base.dart';
 
 /// Function which handles reloading [QueryModel] models.
-Future<void> _onRefresh(BuildContext context, BaseRepository repository) {
+Future<void> onRefresh(BuildContext context, BaseRepository repository) {
   final Completer<void> completer = Completer<void>();
 
   repository.refreshData().then((_) {
@@ -20,7 +20,7 @@ Future<void> _onRefresh(BuildContext context, BaseRepository repository) {
               context,
               'spacex.other.loading_error.reload',
             ),
-            onPressed: () => _onRefresh(context, repository),
+            onPressed: () => onRefresh(context, repository),
           ),
         ),
       );
@@ -30,7 +30,6 @@ Future<void> _onRefresh(BuildContext context, BaseRepository repository) {
 
   return completer.future;
 }
-
 /// Basic screen, which includes an [AppBar] widget.
 /// Used when the desired page doesn't have slivers or reloading.
 class SimplePage extends StatelessWidget {

@@ -45,18 +45,18 @@ class Critter {
 
   factory Critter.fromJson(Map<String, dynamic> json) {
     return Critter(
-      name: json['name'],
-      image: json['image'],
-      scientificName: json['scientific-name'],
-      family: json['family'],
-      timeYear: json['time-year'],
-      timeDay: json['time-day'],
-      location: json['location'],
-      size: json['size'],
-      rarity: json['rarity'],
-      price: json['price'],
-      caughtQuote: json['caught'],
-      link: json['link'],
+      name: json['name'] ?? 'Not filled',
+      image: json['image'] ?? 'Not filled',
+      scientificName: json['scientific-name'] ?? 'Not filled',
+      family: json['family'] ?? 'Not filled',
+      timeYear: json['time-year'] ?? 'Not filled',
+      timeDay: json['time-day'] ?? 'Not filled',
+      location: json['location'] ?? 'Not filled',
+      size: json['size'] ?? 'Not filled',
+      rarity: json['rarity'] ?? 'Not filled',
+      price: json['price'] ?? 'Not filled',
+      caughtQuote: json['caught'] ?? 'Not filled',
+      link: json['link'] ?? 'Not filled',
       //updated: DateTime.parse(json['updated']).toLocal(),
     );
   }

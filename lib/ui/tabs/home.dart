@@ -31,61 +31,65 @@ class HomeTab extends StatelessWidget {
           ],
           centerTitle: true,
         ),
-        body: model.isLoading
-            ? LoadingIndicator()
-            : Column(children: <Widget>[
-                Row(children: <Widget>[
-                  Padding(
-                    padding: const EdgeInsets.all(16.0),
-                    child: Icon(
-                      FontAwesome.leaf,
-                      size: 56,
-                      color: Theme.of(context).textTheme.caption.color,
+        body: RefreshIndicator(
+          onRefresh: () => onRefresh(context, model),
+          child: model.isLoading
+              ? LoadingIndicator()
+              : Column(children: <Widget>[
+                  Row(children: <Widget>[
+                    Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: Icon(
+                        FontAwesome.leaf,
+                        size: 56,
+                        color: Theme.of(context).textTheme.caption.color,
+                      ),
                     ),
-                  ),
-                  Separator.spacer(width: 16),
-                  Expanded(
-                    child: Text(
-                      model.today.message,
-                      style: Theme.of(context).textTheme.title.copyWith(
-                            color: Theme.of(context).textTheme.caption.color,
-                          ),
-                    ),
-                  ),
-                ]),
-                ListView.builder(
-                    shrinkWrap: true,
-                    itemCount: model.today.events.length,
-                    itemBuilder: (BuildContext context, int index) {
-                      return new Text(
-                        model.today.events[index],
+                    Separator.spacer(width: 16),
+                    Expanded(
+                      child: Text(
+                        model.today.message,
                         style: Theme.of(context).textTheme.title.copyWith(
                               color: Theme.of(context).textTheme.caption.color,
                             ),
-                      );
-                    }),
-                Center(
-                    child: GridView.count(
-                  shrinkWrap: true,
-                  crossAxisCount: 2,
-                  primary: false,
-                  crossAxisSpacing: 10,
-                  mainAxisSpacing: 10,
-                  children: model.today.villagerImages
-                      .map((item) => Padding(
-                            padding: const EdgeInsets.all(16.0),
-                            child: GridTile(
-                              child: new Container(
-                                alignment: Alignment.center,
-                                child: SizedBox(
-                                  child: CacheImage(item),
+                      ),
+                    ),
+                  ]),
+                  ListView.builder(
+                      shrinkWrap: true,
+                      itemCount: model.today.events.length,
+                      itemBuilder: (BuildContext context, int index) {
+                        return new Text(
+                          model.today.events[index],
+                          style: Theme.of(context).textTheme.title.copyWith(
+                                color:
+                                    Theme.of(context).textTheme.caption.color,
+                              ),
+                        );
+                      }),
+                  Center(
+                      child: GridView.count(
+                    shrinkWrap: true,
+                    crossAxisCount: 2,
+                    primary: false,
+                    crossAxisSpacing: 10,
+                    mainAxisSpacing: 10,
+                    children: model.today.villagerImages
+                        .map((item) => Padding(
+                              padding: const EdgeInsets.all(16.0),
+                              child: GridTile(
+                                child: new Container(
+                                  alignment: Alignment.center,
+                                  child: SizedBox(
+                                    child: CacheImage(item),
+                                  ),
                                 ),
                               ),
-                            ),
-                          ))
-                      .toList(),
-                )),
-              ]),
+                            ))
+                        .toList(),
+                  )),
+                ]),
+        ),
       ),
     );
   }

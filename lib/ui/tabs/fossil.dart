@@ -39,30 +39,33 @@ class FossilTab extends StatelessWidget {
           ],
           centerTitle: true,
         ),
-        body: model.isLoading
-            ? LoadingIndicator()
-            : ListView.separated(
-                itemCount: model.fossilList?.length,
-                separatorBuilder: (context, index) => Divider(),
-                itemBuilder: (context, index) {
-                  final Fossil fossil = model.getFossil(index);
-                  if (fossil.image != null) {
-                    return ListTile(
-                      leading: SizedBox(
-                        child: CacheImage(fossil.image),
-                      ),
-                      title: Text(fossil.name),
-                      onTap: () => Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (_) => FossilPage(fossil),
+        body: RefreshIndicator(
+          onRefresh: () => onRefresh(context, model),
+          child: model.isLoading
+              ? LoadingIndicator()
+              : ListView.separated(
+                  itemCount: model.fossilList?.length,
+                  separatorBuilder: (context, index) => Divider(),
+                  itemBuilder: (context, index) {
+                    final Fossil fossil = model.getFossil(index);
+                    if (fossil.image != null) {
+                      return ListTile(
+                        leading: SizedBox(
+                          child: CacheImage(fossil.image),
                         ),
-                      ),
-                    );
-                  }
-                  return Separator.divider(indent: 72);
-                },
-              ),
+                        title: Text(fossil.name),
+                        onTap: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (_) => FossilPage(fossil),
+                          ),
+                        ),
+                      );
+                    }
+                    return Separator.divider(indent: 72);
+                  },
+                ),
+        ),
       ),
     );
   }
