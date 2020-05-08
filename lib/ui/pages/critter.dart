@@ -34,47 +34,66 @@ class CritterPage extends StatelessWidget {
             title: 'DETAILS',
             body: Column(
               children: <Widget>[
-                RowItem.textRow(
-                  context,
-                  'Time Year',
-                  _critter.timeYear != null ? _critter.timeYear : '',
-                ),
+                _critter.timeYear != null
+                    ? RowItem.textRow(
+                        context,
+                        'Time Year',
+                        _critter.timeYear,
+                      )
+                    : Separator.none(),
                 Separator.spacer(),
-                RowItem.iconRowSet(
-                  'Available',
-                  getAvailableCritter(date, _critter.timeYear, _critter.timeDay) || _critter.timeYear == 'All year' ? Icon(FontAwesome.check_circle, color: Colors.greenAccent) : Icon(Entypo.circle_with_cross, color: Colors.redAccent),
-                ),
+                _critter.timeYear != null
+                    ? RowItem.iconRowSet(
+                        'Available',
+                        getAvailableCritter(date, _critter.timeYear,
+                                    _critter.timeDay) ||
+                                _critter.timeYear == 'All year'
+                            ? Icon(FontAwesome.check_circle,
+                                color: Colors.greenAccent)
+                            : Icon(Entypo.circle_with_cross,
+                                color: Colors.redAccent),
+                      )
+                    : Separator.none(),
                 Separator.spacer(),
-                RowItem.textRow(
-                  context,
-                  'Time Day',
-                  _critter.timeDay != null ? _critter.timeDay : '',
-                ),
+                _critter.timeDay != null
+                    ? RowItem.textRow(
+                        context,
+                        'Time Day',
+                        _critter.timeDay != null ? _critter.timeDay : '',
+                      )
+                    : Separator.none(),
                 Separator.spacer(),
-                RowItem.textRow(
-                  context,
-                  'Location',
-                  _critter.location != null ? _critter.location : '',
-                ),
+                _critter.location != null
+                    ? RowItem.textRow(
+                        context,
+                        'Location',
+                        _critter.location != null ? _critter.location : '',
+                      )
+                    : Separator.none(),
                 Separator.spacer(),
-                RowItem.textRow(
-                  context,
-                  'Size',
-                  _critter.size!= null ? _critter.size : '',
-                ),
+                _critter.size != null
+                    ? RowItem.textRow(
+                        context,
+                        'Size',
+                        _critter.size != null ? _critter.size : '',
+                      )
+                    : Separator.none(),
                 Separator.spacer(),
-                RowItem.textRowColored(
-                  context,
-                  'Rarity',
-                  _critter.rarity != null ? _critter.rarity : '',
-                  getRarityColor(_critter.rarity)
-                ),
+                _critter.rarity != null
+                    ? RowItem.textRowColored(
+                        context,
+                        'Rarity',
+                        _critter.rarity != null ? _critter.rarity : '',
+                        getRarityColor(_critter.rarity))
+                    : Separator.none(),
                 Separator.spacer(),
-                RowItem.textRow(
-                  context,
-                  'Price',
-                  _critter.price != null ? _critter.price: '',
-                ),
+                _critter.price != null
+                    ? RowItem.textRow(
+                        context,
+                        'Price',
+                        _critter.price != null ? _critter.price : '',
+                      )
+                    : Separator.none(),
               ],
             ),
           ),

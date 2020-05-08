@@ -118,10 +118,12 @@ class VillagerTab extends StatelessWidget {
               ),
               filter: (villager) => [
                 villager.name,
+                villager.gender,
                 villager.species,
                 villager.personality,
                 villager.favColor,
               ],
+              itemStartsWith: true,
               builder: (villager) => ListTile(
                 leading: SizedBox(
                   child: CacheImage(villager.image),

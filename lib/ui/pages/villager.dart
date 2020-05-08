@@ -63,6 +63,14 @@ class VillagerPage extends StatelessWidget {
                       )
                     : Separator.none(),
                 Separator.spacer(),
+                _villager.sign != null
+                    ? RowItem.textRow(
+                        context,
+                        'Sign',
+                        _villager.sign,
+                      )
+                    : Separator.none(),
+                Separator.spacer(),
                 _villager.birthday != null
                     ? RowItem.textRow(
                         context,
@@ -131,11 +139,38 @@ class VillagerPage extends StatelessWidget {
                       )
                     : Separator.none(),
                 Separator.spacer(),
-                _villager.favColor != null ? RowItem.textRow(
-                  context,
-                  'Favorite Colour',
-                  _villager.favColor,
-                ) : Separator.none(),
+                _villager.favColor != null
+                    ? RowItem.textRow(
+                        context,
+                        'Favorite Colour',
+                        _villager.favColor,
+                      )
+                    : Separator.none(),
+                Separator.spacer(),
+                _villager.coffeeType != null
+                    ? RowItem.textRow(
+                        context,
+                        'Coffee',
+                        _villager.coffeeType,
+                      )
+                    : Separator.none(),
+                Separator.spacer(),
+                _villager.coffeeMilk != null
+                    ? RowItem.textRow(
+                        context,
+                        'Coffee Milk',
+                        _villager.coffeeMilk,
+                      )
+                    : Separator.none(),
+                Separator.spacer(),
+                _villager.coffeeSugar != null
+                    ? RowItem.textRow(
+                        context,
+                        'Coffee Sugar',
+                        _villager.coffeeSugar,
+                      )
+                    : Separator.none(),
+                Separator.spacer(),
               ],
             ),
           ),

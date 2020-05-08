@@ -275,8 +275,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.16.1"
-<<<<<<< HEAD
-=======
   js:
     dependency: transitive
     description:
@@ -284,7 +282,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.6.1+1"
->>>>>>> 226ef07550519e46d23607d4382a5a784ee29a22
   latlong:
     dependency: transitive
     description:
@@ -466,7 +463,7 @@ packages:
       name: search_page
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.1.1"
+    version: "1.2.0"
   share:
     dependency: "direct main"
     description:
