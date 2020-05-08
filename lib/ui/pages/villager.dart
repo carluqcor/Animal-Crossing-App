@@ -2,6 +2,7 @@ import 'package:ACApp/models/villager.dart';
 import 'package:ACApp/repositories/index.dart';
 import 'package:ACApp/util/index.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_web_browser/flutter_web_browser.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:toggle_switch/toggle_switch.dart';

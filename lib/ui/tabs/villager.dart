@@ -2,7 +2,6 @@ import 'package:ACApp/ui/pages/index.dart';
 import 'package:ACApp/ui/screens/index.dart';
 import 'package:ACApp/ui/widgets/index.dart';
 import 'package:ACApp/repositories/villager.dart';
-import 'package:ACApp/util/index.dart';
 import 'package:big_tip/big_tip.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_i18n/flutter_i18n.dart';
@@ -62,20 +61,12 @@ class VillagerTab extends StatelessWidget {
                         MaterialPageRoute(
                           builder: (_) => VillagerPage(villager),
                         ),
-                        title: Text(villager.name),
-                        subtitle: Text(villager.quote),
-                        onTap: () => Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (_) => VillagerPage(villager),
-                          ),
-                        ),
-                      );
-                    }
-                    return Separator.divider(indent: 72);
-                  },
-                ),
-        ),
+                      ),
+                    );
+                  }
+                  return Separator.divider(indent: 72);
+                },
+              ),
         floatingActionButton: FloatingActionButton(
           child: Icon(Icons.search),
           heroTag: null,
@@ -123,12 +114,10 @@ class VillagerTab extends StatelessWidget {
               ),
               filter: (villager) => [
                 villager.name,
-                villager.gender,
                 villager.species,
                 villager.personality,
                 villager.favColor,
               ],
-              itemStartsWith: true,
               builder: (villager) => ListTile(
                 leading: SizedBox(
                   child: CacheImage(villager.image),
