@@ -13,3 +13,4 @@ export 'custom_page.dart';
 export 'header_text.dart';
 export 'radio_cell.dart';
 export 'dialog_round.dart';
+export 'allInOne.dart';

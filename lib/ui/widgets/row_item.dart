@@ -1,3 +1,4 @@
+import 'package:ACApp/ui/widgets/separator.dart';
 import 'package:flutter/material.dart';
 
 import '../../util/index.dart';
@@ -20,7 +21,7 @@ class RowItem extends StatelessWidget {
           flex: 5,
           child: Text(
             title,
-            style: Theme.of(context).textTheme.subhead,
+            style: Theme.of(context).textTheme.subtitle1,
             overflow: TextOverflow.ellipsis,
             maxLines: 1,
           ),
