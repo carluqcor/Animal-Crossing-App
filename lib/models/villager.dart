@@ -53,22 +53,22 @@ class Villager {
 
   factory Villager.fromJson(Map<String, dynamic> json) {
     return Villager(
-      name: json['name'] ?? 'Not filled' ,
-      image: json['image'] ?? 'Not filled' ,
-      quote: json['quote'] ?? 'Not filled' ,
-      gender: json['gender'] ?? 'Not filled' ,
-      personality: json['personality'] ?? 'Not filled' ,
-      species: json['species'] ?? 'Not filled' ,
-      birthday: json['birthday'] ?? 'Not filled' ,
-      islanderFavorite: json['islander-favorite'] ?? 'Not filled' ,
-      islanderAllergic: json['islander-allergic'] ?? 'Not filled' ,
-      skill: json['skill'] ?? 'Not filled' ,
-      goal: json['goal'] ?? 'Not filled' ,
-      fear: json['fear'] ?? 'Not filled' ,
-      favClothing: json['favclothing'] ?? 'Not filled' ,
-      leastFavClothing: json['leastfavclothing'] ?? 'Not filled' ,
-      favColor: json['favcolor'] ?? 'Not filled' ,
-      link: json['link'] ?? 'Not filled' ,
+      name: json['name'] == null ? 'Not filled' : json['name'],
+      image: json['image'] == null ? 'Not filled' : json['image'] ,
+      quote: json['quote'] == null ? 'Not filled' : json['quote'] ,
+      gender: json['gender'] == null ? 'Not filled' : json['gender'] ,
+      personality: json['personality'] == null ? 'Not filled' : json['personality'] ,
+      species: json['species'] == null ? 'Not filled' : json['species'] ,
+      birthday: json['birthday'] == null ? 'Not filled' : json['birthday'] ,
+      islanderFavorite: json['islander-favorite'] == null ? 'Not filled' : json['islander-favorite'] ,
+      islanderAllergic: json['islander-allergic'] == null ? 'Not filled' : json['islander-allergic'] ,
+      skill: json['skill'] == null ? 'Not filled' : json['skill'] ,
+      goal: json['goal'] == null ? 'Not filled' : json['goal'] ,
+      fear: json['fear'] == null ? 'Not filled' : json['fear'] ,
+      favClothing: json['favclothing'] == null ? 'Not filled' : json['favclothing'] ,
+      leastFavClothing: json['leastfavclothing'] == null ? 'Not filled' : json['leastfavclothing'] ,
+      favColor: json['favcolor'] == null ? 'Not filled' : json['favcolor'] ,
+      link: json['link'] == null ? 'Not filled' : json['link'] ,
     );
   }
 }
