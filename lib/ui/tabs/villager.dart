@@ -46,7 +46,7 @@ class VillagerTab extends StatelessWidget {
         body: model.isLoading
             ? LoadingIndicator()
             : ListView.separated(
-                itemCount: model.villagerList?.length,
+                itemCount: model.villagerCount,
                 separatorBuilder: (context, index) => Divider(),
                 itemBuilder: (context, index) {
                   final Villager villager = model.getVillager(index);
