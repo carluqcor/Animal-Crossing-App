@@ -44,7 +44,7 @@ class HeadCardPage extends StatelessWidget {
                           maxLines: 2,
                           style: Theme.of(context)
                               .textTheme
-                              .title
+                              .headline6
                               .copyWith(fontWeight: FontWeight.bold),
                         ),
                       ],

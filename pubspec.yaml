@@ -16,6 +16,7 @@ dependencies:
   flutter_web_browser: ^0.11.0
   launch_review: ^2.0.0
   http: ^0.12.0+4
+  url_launcher: ^5.4.5
 
   ## Widgets
   add_2_calendar: ^1.4.0
