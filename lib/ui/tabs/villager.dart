@@ -43,19 +43,24 @@ class VillagerTab extends StatelessWidget {
           ],
           centerTitle: true,
         ),
-        body: RefreshIndicator(
-          onRefresh: () => onRefresh(context, model),
-          child: model.isLoading
-              ? LoadingIndicator()
-              : ListView.separated(
-                  itemCount: model.villagerList?.length,
-                  separatorBuilder: (context, index) => Divider(),
-                  itemBuilder: (context, index) {
-                    final Villager villager = model.getVillager(index);
-                    if (villager.image != null) {
-                      return ListTile(
-                        leading: SizedBox(
-                          child: CacheImage(villager.image),
+        body: model.isLoading
+            ? LoadingIndicator()
+            : ListView.separated(
+                itemCount: model.villagerCount,
+                separatorBuilder: (context, index) => Divider(),
+                itemBuilder: (context, index) {
+                  final Villager villager = model.getVillager(index);
+                  if (villager.image != null) {
+                    return ListTile(
+                      leading: SizedBox(
+                        child: CacheImage(villager.image),
+                      ),
+                      title: Text(villager.name),
+                      subtitle: Text(villager.quote),
+                      onTap: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => VillagerPage(villager),
                         ),
                         title: Text(villager.name),
                         subtitle: Text(villager.quote),
