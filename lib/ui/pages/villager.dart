@@ -97,11 +97,10 @@ class VillagerPage extends StatelessWidget {
                   _villager.leastFavClothing,
                 ) : Separator.none(),
                 Separator.spacer(),
-                _villager.favColor != null ? RowItem.textRowColored(
+                _villager.favColor != null ? RowItem.textRow(
                   context,
                   'Favorite Colour',
                   _villager.favColor,
-                  colors[_villager.favColor],
                 ) : Separator.none(),
               ],
             ),

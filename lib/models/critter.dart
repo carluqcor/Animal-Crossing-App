@@ -25,7 +25,6 @@ class Critter {
       price,
       caughtQuote,
       link;
-  //final DateTime updated;
 
   const Critter(
       {this.name,
@@ -40,7 +39,6 @@ class Critter {
       this.price,
       this.caughtQuote,
       this.link,
-      //this.updated
       });
 
   factory Critter.fromJson(Map<String, dynamic> json) {
@@ -57,7 +55,6 @@ class Critter {
       price: json['price'] ?? 'Not filled',
       caughtQuote: json['caught'] ?? 'Not filled',
       link: json['link'] ?? 'Not filled',
-      //updated: DateTime.parse(json['updated']).toLocal(),
     );
   }
 }
