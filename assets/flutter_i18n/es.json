@@ -14,17 +14,24 @@
     "villagers": {
       "title": "Aldean@s",
       "details": {
+        "selected": "Seleccionado",
         "title": "Detalles",
         "gender": "Género",
         "personality": "Personalidad",
         "species": "Especie",
+        "sign": "Signo",
         "birthday": "Cumpleaños",
+        "fav_islander": "Aldeano favorito",
+        "allergic_islander": "Aldeano alérgico",
         "skill": "Habilidad",
         "goal": "Meta",
-        "fear": "Miedo",
-        "favorite_cloth": "Ropa Favorita",
-        "least_cloth": "Ropa menos Favorita",
-        "favorite_color": "Color Favorito"
+        "fear": "Temor",
+        "favorite_cloth": "Ropa favorita",
+        "least_cloth": "Ropa menos favorita",
+        "favorite_color": "Color favorito",
+        "coffee": "Café",
+        "coffee_milk": "Cantidad de leche",
+        "coffee_sugar": "Cantidad de azucar"
       }
     },
     "critters": {
@@ -73,6 +80,28 @@
       "tooltip": {
         "search": "Búsqueda"
       }
+    }
+  },
+  "settings": {
+    "headers": {
+      "services": "Servicios",
+      "general": "General"
+    },
+    "theme": {
+      "title": "Apariencia",
+      "body": "Escoge entre claro u oscuro",
+      "theme": {
+        "dark": "Tema oscuro",
+        "black": "Tema negro",
+        "light": "Tema claro",
+        "system": "Tema por defecto"
+      }
+    },
+    "notifications": {
+      "title": "Notificaciones",
+      "villager_selected": "Aldeano seleccionado correctamente",
+      "villager_unselected": "Aldeano desmarcado correctamente",
+      "villager_error": "Ya has seleccionado 10 aldeanos"
     }
   }
 }

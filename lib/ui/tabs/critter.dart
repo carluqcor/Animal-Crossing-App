@@ -122,6 +122,7 @@ class CritterTab extends StatelessWidget {
                   child: Icon(Icons.sentiment_dissatisfied),
                 ),
                 filter: (critter) => [critter.name, critter.rarity],
+                showItemsOnEmpty: true,
                 builder: (critter) => ListTile(
                       leading: SizedBox(
                         child: CacheImage(critter.image),

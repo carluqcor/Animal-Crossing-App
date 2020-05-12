@@ -14,17 +14,24 @@
     "villagers": {
       "title": "Villageois/es",
       "details": {
+        "selected": "Sélectionné",
         "title": "Détails",
         "gender": "Genre",
         "personality": "Personnalité",
         "species": "Espèce",
+        "sign": "Signe",
         "birthday": "Anniversaire",
+        "fav_islander": "Villageois/es préféré",
+        "allergic_islander": "Villageois/es allergique",
         "skill": "Compétence",
         "goal": "Objectif",
         "fear": "Peur",
         "favorite_cloth": "Vêtements Préférés",
         "least_cloth": "Vêtements Moins Préférés",
-        "favorite_color": "Couleur Préférée"
+        "favorite_color": "Couleur Préférée",
+        "coffee": "Café",
+        "coffee_milk": "Quantité de lait",
+        "coffee_sugar": "Quantité de sucre"
       }
     },
     "critters": {
@@ -73,6 +80,28 @@
       "tooltip": {
         "search": "Chercher"
       }
+    }
+  },
+  "settings": {
+    "headers": {
+      "services": "Services",
+      "general": "Général"
+    },
+    "theme": {
+      "title": "Apparence",
+      "body": "Choisissez entre clair ou foncé",
+      "theme": {
+        "dark": "Thème sombre",
+        "black": "Thème noir",
+        "light": "Thème clair",
+        "system": "Thème par défaut"
+      }
+    },
+    "notifications": {
+      "title": "Notifications",
+      "villager_selected": "Villageois/es sélectionné correctement",
+      "villager_unselected": "Villageois/es désélectionné avec succès",
+      "villager_error": "Vous avez déjà sélectionné 10 Villageois/es"
     }
   }
 }

@@ -14,26 +14,33 @@
     "villagers": {
       "title": "Villagers",
       "details": {
+        "selected": "Selected",
         "title": "Details",
         "gender": "Gender",
         "personality": "Personality",
         "species": "Species",
+        "sign": "Sign",
         "birthday": "Birthday",
+        "fav_islander": "Islander favorite",
+        "allergic_islander": "Islander allergic",
         "skill": "Skill",
         "goal": "Goal",
         "fear": "Fear",
-        "favorite_cloth": "Favorite Clothing",
-        "least_cloth": "Least Favorite Clothing",
-        "favorite_color": "Favorite Color"
+        "favorite_cloth": "Favorite clothing",
+        "least_cloth": "Least Favorite clothing",
+        "favorite_color": "Favorite color",
+        "coffee": "Coffee",
+        "coffee_milk": "Milk quantity",
+        "coffee_sugar": "Coffe quantity"
       }
     },
     "critters": {
       "title": "Critters",
       "details": {
         "title": "Details",
-        "time_year": "Time Year",
+        "time_year": "Time year",
         "available": "Available",
-        "time_day": "Time Day",
+        "time_day": "Time day",
         "location": "Location",
         "size": "Size",
         "rarity": "Rarity",
@@ -90,18 +97,11 @@
         "system": "System theme"
       }
     },
-    "image_quality": {
-      "title": "Image quality",
-      "body": "Adjust image resolution",
-      "quality": {
-        "low": "Low",
-        "medium": "Medium",
-        "high": "High"
-      }
-    },
     "notifications": {
       "title": "Notifications",
-      "body": "Adjust launch announcements"
+      "villager_selected": "Villager selected correctly",
+      "villager_unselected": "Villager unselected correctly",
+      "villager_error": "You already have selected 10 villagers"
     }
   }
 }

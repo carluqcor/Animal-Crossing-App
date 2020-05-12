@@ -1,0 +1,107 @@
+{
+  "app": {
+    "title": "Animal Crossing Taschenführer",
+    "menu": {
+      "settings": "Einstellungen",
+      "about": "Über"
+    }
+  },
+  "ac": {
+    "home": {
+      "title": "Startseite",
+      "today": "Heute nachricht"
+    },
+    "villagers": {
+      "title": "Dorfbewohner",
+      "details": {
+        "selected": "Ausgewählt",
+        "title": "Einzelheiten",
+        "gender": "Geschlecht",
+        "personality": "Persönlichkeit",
+        "species": "Species",
+        "sign": "Sternzeichen",
+        "birthday": "Geburtstag",
+        "fav_islander": "Islander favorit",
+        "allergic_islander": "Islander allergiker",
+        "skill": "Fertigkeit",
+        "goal": "Ziel",
+        "fear": "Angst",
+        "favorite_cloth": "Lieblingskleidung",
+        "least_cloth": "Wenigsten lieblingskleidung",
+        "favorite_color": "Lieblingsfarbe",
+        "coffe": "Kaffee",
+        "coffe_milk": "Milchmenge",
+        "coffer_sugar": "Kaffeemenge"
+      }
+    },
+    "critters": {
+      "title": "Insekten",
+      "details": {
+        "title": "Einzelheiten",
+        "time_year": "Saison",
+        "available": "Verfügbar",
+        "time_day": "Zeitplan",
+        "location": "Standort",
+        "size": "Größe",
+        "rarity": "Seltenheit",
+        "price": "Preis"
+      }
+    },
+    "fossils": {
+      "title": "Fossilien",
+      "details": {
+        "title": "Einzelheiten",
+        "period": "Zeitraum",
+        "length": "Länge",
+        "price": "Preis"
+      }
+    },
+    "flowers":{
+      "title": "Blumen",
+      "subtype": {
+        "windflower": "Windblume",
+        "pansy": "Stiefmütterchen",
+        "tulip": "Tulpe",
+        "cosmo": "Cosmo",
+        "hyacinth": "Hyazinthe",
+        "mum": "Chrysantheme",
+        "lily": "Lilie",
+        "rose": "Rose"
+      }
+    }, 
+    "search": {
+      "suggestion": {
+        "villager": "Suche nach name, art, persönlichkeit oder lieblingsfarbe des dorfbewohners",
+        "critter": "Suche nach insektennamen oder insektenrarität"
+      },
+      "failure": "Es wurden keine artikel gefunden"
+    },
+    "other": {
+      "tooltip": {
+        "search": "Suche"
+      }
+    }
+  },
+  "settings": {
+    "headers": {
+      "services": "Dienstleistungen",
+      "general": "Allgemeines"
+    },
+    "theme": {
+      "title": "Aussehen",
+      "body": "Wählen die zwischen hell oder dunkel",
+      "theme": {
+        "dark": "Dunkles thema",
+        "black": "Schwarzes thema",
+        "light": "Lichtthema",
+        "system": "Standardthema"
+      }
+    },
+    "notifications": {
+      "title": "Benachrichtigungen",
+      "villager_selected": "Dorfbewohner richtig selektiert",
+      "villager_unselected": "Dorfbewohner richtig nicht selektiert",
+      "villager_error": "Sie haben bereits 10 Dorfbewohner ausgewählt"
+    }
+  }
+}

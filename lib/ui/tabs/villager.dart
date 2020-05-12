@@ -118,6 +118,7 @@ class VillagerTab extends StatelessWidget {
                 villager.personality,
                 villager.favColor,
               ],
+              showItemsOnEmpty: true,
               builder: (villager) => ListTile(
                 leading: SizedBox(
                   child: CacheImage(villager.image),

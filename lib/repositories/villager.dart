@@ -55,18 +55,20 @@ class VillagerRepository extends BaseRepository {
   Future<bool> addVillagerUser(String name) async {
     final prefs = await SharedPreferences.getInstance();
     List<String> listPreferences = prefs.getStringList('villager') ?? [];
-    print(listPreferences.length);
     if (listPreferences.length == 10){
       return false;
-    } else{
-      listPreferences.add(name);
-      prefs.setStringList('villager', listPreferences);
-      villagerByUser
-          .add(villagerList.where((villager) => villager.name == name).first);
+    } else {
+      if (!villagerByUser.contains(name)){
+        listPreferences.add(name);
+        prefs.setStringList('villager', listPreferences);
+        villagerByUser
+            .add(villagerList.where((villager) => villager.name == name).first);
 
-      notifyListeners();
-      
-      return true;
+        notifyListeners();
+        
+        return true;
+      } 
+      return false;
     }
   }
 
@@ -74,7 +76,6 @@ class VillagerRepository extends BaseRepository {
     final prefs = await SharedPreferences.getInstance();
 
     List<String> listPreferences = prefs.getStringList('villager');
-
     listPreferences.remove(name);
     prefs.setStringList('villager', listPreferences);
     villagerByUser

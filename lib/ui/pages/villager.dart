@@ -2,6 +2,7 @@ import 'package:ACApp/models/villager.dart';
 import 'package:ACApp/repositories/index.dart';
 import 'package:ACApp/util/index.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_i18n/flutter_i18n.dart';
 import 'package:flutter_web_browser/flutter_web_browser.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_icons/flutter_icons.dart';
@@ -10,9 +11,6 @@ import 'package:toggle_switch/toggle_switch.dart';
 import '../../models/index.dart';
 import '../widgets/index.dart';
 
-/// COCKTAIL PAGE VIEW
-/// It shows detailed information of cocktails like
-/// instructions, ingredients and measure
 class VillagerPage extends StatelessWidget {
   final _scaffoldKey = GlobalKey<ScaffoldState>();
   final Villager _villager;
@@ -42,45 +40,85 @@ class VillagerPage extends StatelessWidget {
           ),
           Separator.cardSpacer(),
           CardPage(
-            title: 'DETAILS',
+            title: FlutterI18n.translate(
+              context,
+              'ac.villagers.details.title',
+            ),
             body: Column(
               children: <Widget>[
                 _villager.gender != null
                     ? RowItem(
-                        'Custom',
+                        FlutterI18n.translate(
+                          context,
+                          'ac.villagers.details.selected',
+                        ),
                         ToggleSwitch(
                             initialLabelIndex: Provider.of<VillagerRepository>(
                                     context,
                                     listen: false)
                                 .isVillagerSaved(_villager.name),
-                            minWidth: 45.0,
+                            minWidth: 35.0,
                             cornerRadius: 5,
-                            activeBgColor: Colors.green,
+                            activeBgColor: Colors.grey,
                             activeTextColor: Colors.white,
                             inactiveBgColor: Colors.grey,
                             inactiveTextColor: Colors.white,
                             labels: ['NO', 'YES'],
-                            icons: [FontAwesome.check, FontAwesome.times],
+                            activeColors: [Colors.redAccent, Colors.green],
+                            icons: [FontAwesome.times, FontAwesome.check],
                             onToggle: (index) async {
                               if (index == 1) {
-                                if(!(await Provider.of<VillagerRepository>(context,listen: false).addVillagerUser(_villager.name))) {
-                                  _scaffoldKey.currentState..hideCurrentSnackBar()..showSnackBar(SnackBar(content: Text('Error'),));
-                                }else{
-                                  _scaffoldKey.currentState..hideCurrentSnackBar()..showSnackBar(SnackBar(content: Text('Mu bien chiquito'),));
+                                if (!(await Provider.of<VillagerRepository>(
+                                        context,
+                                        listen: false)
+                                    .addVillagerUser(_villager.name))) {
+                                  _scaffoldKey.currentState
+                                    ..hideCurrentSnackBar()
+                                    ..showSnackBar(SnackBar(
+                                      content: Text(
+                                        FlutterI18n.translate(
+                                          context,
+                                          'settings.notifications.villager_error',
+                                        ),
+                                      ),
+                                    ));
+                                } else {
+                                  _scaffoldKey.currentState
+                                    ..hideCurrentSnackBar()
+                                    ..showSnackBar(SnackBar(
+                                      content: Text(
+                                        FlutterI18n.translate(
+                                          context,
+                                          'settings.notifications.villager_selected',
+                                        ),
+                                      ),
+                                    ));
                                 }
                               } else {
                                 Provider.of<VillagerRepository>(context,
                                         listen: false)
                                     .removeVillagerUser(_villager.name);
-                                _scaffoldKey.currentState..hideCurrentSnackBar()..showSnackBar(SnackBar(content: Text('Borrado correctamente'),));
+                                _scaffoldKey.currentState
+                                  ..hideCurrentSnackBar()
+                                  ..showSnackBar(SnackBar(
+                                    content:Text(
+                                        FlutterI18n.translate(
+                                          context,
+                                          'settings.notifications.villager_unselected',
+                                        ),
+                                      ),
+                                  ));
                               }
                             }),
                       )
                     : Separator.none(),
-                Separator.spacer(),
+                Separator.divider(),
                 _villager.gender != null
                     ? RowItem.iconRowSet(
-                        'Gender',
+                        FlutterI18n.translate(
+                          context,
+                          'ac.villagers.details.gender',
+                        ),
                         getIconGender(
                             _villager.gender != null ? _villager.gender : ''),
                       )
@@ -89,7 +127,10 @@ class VillagerPage extends StatelessWidget {
                 _villager.personality != null
                     ? RowItem.textRow(
                         context,
-                        'Personality',
+                        FlutterI18n.translate(
+                          context,
+                          'ac.villagers.details.personality',
+                        ),
                         _villager.personality,
                       )
                     : Separator.none(),
@@ -97,7 +138,10 @@ class VillagerPage extends StatelessWidget {
                 _villager.species != null
                     ? RowItem.textRow(
                         context,
-                        'Species',
+                        FlutterI18n.translate(
+                          context,
+                          'ac.villagers.details.species',
+                        ),
                         _villager.species,
                       )
                     : Separator.none(),
@@ -105,7 +149,10 @@ class VillagerPage extends StatelessWidget {
                 _villager.sign != null
                     ? RowItem.textRow(
                         context,
-                        'Sign',
+                        FlutterI18n.translate(
+                          context,
+                          'ac.villagers.details.sign',
+                        ),
                         _villager.sign,
                       )
                     : Separator.none(),
@@ -113,7 +160,10 @@ class VillagerPage extends StatelessWidget {
                 _villager.birthday != null
                     ? RowItem.textRow(
                         context,
-                        'Birthday',
+                        FlutterI18n.translate(
+                          context,
+                          'ac.villagers.details.birthday',
+                        ),
                         _villager.birthday,
                       )
                     : Separator.none(),
@@ -123,7 +173,10 @@ class VillagerPage extends StatelessWidget {
                 isDataFilled(_villager.islanderFavorite)
                     ? RowItem.textRow(
                         context,
-                        'Islander Favorite',
+                        FlutterI18n.translate(
+                          context,
+                          'ac.villagers.details.fav_islander',
+                        ),
                         _villager.islanderFavorite,
                       )
                     : Separator.none(),
@@ -131,7 +184,10 @@ class VillagerPage extends StatelessWidget {
                 isDataFilled(_villager.islanderAllergic)
                     ? RowItem.textRow(
                         context,
-                        'Islander Allergic',
+                        FlutterI18n.translate(
+                          context,
+                          'ac.villagers.details.allergic_islander',
+                        ),
                         _villager.islanderAllergic,
                       )
                     : Separator.none(),
@@ -141,7 +197,10 @@ class VillagerPage extends StatelessWidget {
                 _villager.skill != null
                     ? RowItem.textRow(
                         context,
-                        'Skill',
+                        FlutterI18n.translate(
+                          context,
+                          'ac.villagers.details.skill',
+                        ),
                         _villager.skill,
                       )
                     : Separator.none(),
@@ -149,7 +208,10 @@ class VillagerPage extends StatelessWidget {
                 _villager.goal != null
                     ? RowItem.textRow(
                         context,
-                        'Goal',
+                        FlutterI18n.translate(
+                          context,
+                          'ac.villagers.details.goal',
+                        ),
                         _villager.goal,
                       )
                     : Separator.none(),
@@ -157,7 +219,10 @@ class VillagerPage extends StatelessWidget {
                 _villager.fear != null
                     ? RowItem.textRow(
                         context,
-                        'Fear',
+                        FlutterI18n.translate(
+                          context,
+                          'ac.villagers.details.fear',
+                        ),
                         _villager.fear,
                       )
                     : Separator.none(),
@@ -165,7 +230,10 @@ class VillagerPage extends StatelessWidget {
                 _villager.favClothing != null
                     ? RowItem.textRow(
                         context,
-                        'Favorite Clothing',
+                        FlutterI18n.translate(
+                          context,
+                          'ac.villagers.details.favorite_cloth',
+                        ),
                         _villager.favClothing,
                       )
                     : Separator.none(),
@@ -173,7 +241,10 @@ class VillagerPage extends StatelessWidget {
                 _villager.leastFavClothing != null
                     ? RowItem.textRow(
                         context,
-                        'Least Favorite Clothing',
+                        FlutterI18n.translate(
+                          context,
+                          'ac.villagers.details.least_cloth',
+                        ),
                         _villager.leastFavClothing,
                       )
                     : Separator.none(),
@@ -181,7 +252,10 @@ class VillagerPage extends StatelessWidget {
                 _villager.favColor != null
                     ? RowItem.textRow(
                         context,
-                        'Favorite Colour',
+                        FlutterI18n.translate(
+                          context,
+                          'ac.villagers.details.favorite_color',
+                        ),
                         _villager.favColor,
                       )
                     : Separator.none(),
@@ -189,7 +263,10 @@ class VillagerPage extends StatelessWidget {
                 _villager.coffeeType != null
                     ? RowItem.textRow(
                         context,
-                        'Coffee',
+                        FlutterI18n.translate(
+                          context,
+                          'ac.villagers.details.coffee',
+                        ),
                         _villager.coffeeType,
                       )
                     : Separator.none(),
@@ -197,7 +274,10 @@ class VillagerPage extends StatelessWidget {
                 _villager.coffeeMilk != null
                     ? RowItem.textRow(
                         context,
-                        'Coffee Milk',
+                        FlutterI18n.translate(
+                          context,
+                          'ac.villagers.details.coffee_milk',
+                        ),
                         _villager.coffeeMilk,
                       )
                     : Separator.none(),
@@ -205,7 +285,10 @@ class VillagerPage extends StatelessWidget {
                 _villager.coffeeSugar != null
                     ? RowItem.textRow(
                         context,
-                        'Coffee Sugar',
+                        FlutterI18n.translate(
+                          context,
+                          'ac.villagers.details.coffee_sugar',
+                        ),
                         _villager.coffeeSugar,
                       )
                     : Separator.none(),
