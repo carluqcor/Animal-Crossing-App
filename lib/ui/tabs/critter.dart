@@ -53,26 +53,19 @@ class CritterTab extends StatelessWidget {
                   separatorBuilder: (context, index) => Divider(),
                   itemBuilder: (context, index) {
                     final Critter critter = model.getCritter(index);
-                    if (critter.image != null) {
-                      return ListTile(
-                        leading: SizedBox(
-                          child: CacheImage(critter.image),
+                    return ListTile(
+                      leading: SizedBox(
+                        child: CacheImage(critter.link),
+                      ),
+                      title: Text(critter.nameEn),
+                      trailing: Icon(Entypo.circle_with_cross, color: denyIcon),
+                      onTap: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => CritterPage(critter),
                         ),
-                        title: Text(critter.name),
-                        trailing: getAvailableCritter(
-                                    date, critter.timeYear, critter.timeDay) ||
-                                critter.timeYear == 'All year'
-                            ? Icon(FontAwesome.check_circle, color: acceptIcon)
-                            : Icon(Entypo.circle_with_cross, color: denyIcon),
-                        onTap: () => Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (_) => CritterPage(critter),
-                          ),
-                        ),
-                      );
-                    }
-                    return Separator.divider(indent: 72);
+                      ),
+                    );
                   },
                 ),
         ),
@@ -121,20 +114,15 @@ class CritterTab extends StatelessWidget {
                   ),
                   child: Icon(Icons.sentiment_dissatisfied),
                 ),
-                filter: (critter) => [critter.name, critter.rarity],
+                filter: (critter) => [critter.nameEn],
                 showItemsOnEmpty: true,
                 builder: (critter) => ListTile(
                       leading: SizedBox(
                         child: CacheImage(critter.image),
                       ),
-                      title: Text(critter.name),
-                      trailing: getAvailableCritter(
-                                  date, critter.timeYear, critter.timeDay) ||
-                              critter.timeYear == 'All year'
-                          ? Icon(FontAwesome.check_circle,
-                              color: Colors.greenAccent)
-                          : Icon(Entypo.circle_with_cross,
-                              color: Colors.redAccent),
+                      title: Text(critter.nameEn),
+                      trailing: Icon(Entypo.circle_with_cross,
+                          color: Colors.redAccent),
                       onTap: () => Navigator.push(
                         context,
                         MaterialPageRoute(

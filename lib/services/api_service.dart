@@ -12,11 +12,7 @@ class ApiService {
   }
 
   static Future<Response> getCritters() async {
-    return Dio().get(Url.critterList);
-  }
-
-  static Future<Response> getCritter(String name) async {
-    return Dio().get(Url.critter+name+'/'+Url.nookApi);
+    return Dio().get(Url.critter);
   }
 
   static Future<Response> getTodayResponse() async {

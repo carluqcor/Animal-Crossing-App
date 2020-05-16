@@ -13,6 +13,8 @@
     },
     "villagers": {
       "title": "Villageois/es",
+      "selected": "No",
+      "non_selected": "Oui",
       "details": {
         "selected": "Sélectionné",
         "title": "Détails",

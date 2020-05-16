@@ -55,7 +55,7 @@ class FlowerTab extends StatelessWidget {
                               crossAxisSpacing: 4,
                               childAspectRatio:
                                   MediaQuery.of(context).size.width /
-                                      (MediaQuery.of(context).size.height / 3),
+                                      (MediaQuery.of(context).size.height / 2.5),
                             ),
                             itemBuilder: (BuildContext context, int index) {
                               return new Card(
@@ -65,7 +65,7 @@ class FlowerTab extends StatelessWidget {
                                           model.flowers[index].name, context),
                                       style: Theme.of(context)
                                           .textTheme
-                                          .subhead
+                                          .subtitle1
                                           .copyWith(),
                                       textAlign: TextAlign.center,
                                     ),

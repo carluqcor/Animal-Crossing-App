@@ -13,6 +13,8 @@
     },
     "villagers": {
       "title": "Dorfbewohner",
+      "selected": "No",
+      "non_selected": "Ja",
       "details": {
         "selected": "Ausgewählt",
         "title": "Einzelheiten",

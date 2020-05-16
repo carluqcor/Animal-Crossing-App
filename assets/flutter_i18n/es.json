@@ -13,6 +13,8 @@
     },
     "villagers": {
       "title": "Aldean@s",
+      "selected": "No",
+      "non_selected": "Si",
       "details": {
         "selected": "Seleccionado",
         "title": "Detalles",

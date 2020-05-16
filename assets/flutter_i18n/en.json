@@ -13,6 +13,8 @@
     },
     "villagers": {
       "title": "Villagers",
+      "selected": "No",
+      "non_selected": "Yes",
       "details": {
         "selected": "Selected",
         "title": "Details",

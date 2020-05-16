@@ -57,13 +57,22 @@ class VillagerPage extends StatelessWidget {
                                     context,
                                     listen: false)
                                 .isVillagerSaved(_villager.name),
-                            minWidth: 35.0,
+                            minWidth: MediaQuery.of(context).size.width / 8,
                             cornerRadius: 5,
                             activeBgColor: Colors.grey,
                             activeTextColor: Colors.white,
                             inactiveBgColor: Colors.grey,
                             inactiveTextColor: Colors.white,
-                            labels: ['NO', 'YES'],
+                            labels: [
+                              FlutterI18n.translate(
+                                context,
+                                'ac.villagers.selected',
+                              ),
+                              FlutterI18n.translate(
+                                context,
+                                'ac.villagers.non_selected',
+                              )
+                            ],
                             activeColors: [Colors.redAccent, Colors.green],
                             icons: [FontAwesome.times, FontAwesome.check],
                             onToggle: (index) async {
@@ -101,12 +110,12 @@ class VillagerPage extends StatelessWidget {
                                 _scaffoldKey.currentState
                                   ..hideCurrentSnackBar()
                                   ..showSnackBar(SnackBar(
-                                    content:Text(
-                                        FlutterI18n.translate(
-                                          context,
-                                          'settings.notifications.villager_unselected',
-                                        ),
+                                    content: Text(
+                                      FlutterI18n.translate(
+                                        context,
+                                        'settings.notifications.villager_unselected',
                                       ),
+                                    ),
                                   ));
                               }
                             }),

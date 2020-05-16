@@ -17,13 +17,13 @@ class CritterPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(_critter.name), centerTitle: true),
+      appBar: AppBar(title: Text(_critter.nameEn), centerTitle: true),
       body: ListView(
         padding: const EdgeInsets.all(16),
         children: <Widget>[
           HeadCardPage(
             title: '',
-            imageUrl: _critter.image,
+            imageUrl: _critter.link,
             body: Text(
               _critter.caughtQuote,
             ),
@@ -34,66 +34,39 @@ class CritterPage extends StatelessWidget {
             title: 'DETAILS',
             body: Column(
               children: <Widget>[
-                _critter.timeYear != null
-                    ? RowItem.textRow(
-                        context,
-                        'Time Year',
-                        _critter.timeYear,
-                      )
-                    : Separator.none(),
+                RowItem.textRow(
+                  context,
+                  'Time Year',
+                  _critter.time,
+                ),
                 Separator.spacer(),
-                _critter.timeYear != null
-                    ? RowItem.iconRowSet(
-                        'Available',
-                        getAvailableCritter(date, _critter.timeYear,
-                                    _critter.timeDay) ||
-                                _critter.timeYear == 'All year'
-                            ? Icon(FontAwesome.check_circle,
-                                color: Colors.greenAccent)
-                            : Icon(Entypo.circle_with_cross,
-                                color: Colors.redAccent),
-                      )
-                    : Separator.none(),
+                RowItem.iconRowSet(
+                  'Available',
+                  Icon(Entypo.circle_with_cross, color: Colors.redAccent),
+                ),
                 Separator.spacer(),
-                _critter.timeDay != null
-                    ? RowItem.textRow(
-                        context,
-                        'Time Day',
-                        _critter.timeDay != null ? _critter.timeDay : '',
-                      )
-                    : Separator.none(),
+                RowItem.textRow(context, 'Time Day', _critter.time),
                 Separator.spacer(),
-                _critter.location != null
-                    ? RowItem.textRow(
-                        context,
-                        'Location',
-                        _critter.location != null ? _critter.location : '',
-                      )
-                    : Separator.none(),
+                RowItem.textRow(
+                  context,
+                  'Location',
+                  _critter.location,
+                ),
                 Separator.spacer(),
-                _critter.size != null
-                    ? RowItem.textRow(
-                        context,
-                        'Size',
-                        _critter.size != null ? _critter.size : '',
-                      )
-                    : Separator.none(),
+                RowItem.textRowColored(context, 'Rarity', _critter.rarity,
+                    getRarityColor(_critter.rarity)),
                 Separator.spacer(),
-                _critter.rarity != null
-                    ? RowItem.textRowColored(
-                        context,
-                        'Rarity',
-                        _critter.rarity != null ? _critter.rarity : '',
-                        getRarityColor(_critter.rarity))
-                    : Separator.none(),
+                RowItem.textRow(
+                  context,
+                  'Price',
+                  _critter.price.toString(),
+                ),
                 Separator.spacer(),
-                _critter.price != null
-                    ? RowItem.textRow(
-                        context,
-                        'Price',
-                        _critter.price != null ? _critter.price : '',
-                      )
-                    : Separator.none(),
+                RowItem.textRow(
+                  context,
+                  'Price Flick',
+                  _critter.priceFlick.toString(),
+                ),
               ],
             ),
           ),

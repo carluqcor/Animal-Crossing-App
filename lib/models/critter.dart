@@ -9,47 +9,54 @@ class Critters {
 }
 
 class Critter {
-  final String name,
-      image,
-      scientificName,
-      family,
-      timeYear,
-      timeDay,
-      location,
-      size,
-      rarity,
-      price,
+  final int id;
+  final String image,
       caughtQuote,
-      link;
+      museumPhrase,
+      link,
+      nameEn,
+      monthNorthern,
+      monthSouthern,
+      time,
+      location,
+      rarity;
+  final bool isAllDay, isAllYear;
+  final int price, priceFlick;
 
   const Critter({
-    this.name,
+    this.nameEn,
     this.image,
-    this.scientificName,
-    this.family,
-    this.timeYear,
-    this.timeDay,
-    this.location,
-    this.size,
-    this.rarity,
+    this.id,
+    this.museumPhrase,
     this.price,
+    this.priceFlick,
     this.caughtQuote,
     this.link,
+    this.monthNorthern,
+    this.monthSouthern,
+    this.time,
+    this.isAllDay,
+    this.isAllYear,
+    this.location,
+    this.rarity,
   });
 
   factory Critter.fromJson(Map<String, dynamic> json) {
     return Critter(
-      name: json['name'],
+      nameEn: json['name']['name-en'],
       image: json['image'],
-      scientificName: json['scientific-name'],
-      family: json['family'],
-      timeYear: json['time-year'],
-      timeDay: json['time-day'],
-      location: json['location'],
-      size: json['size'],
-      rarity: json['rarity'],
+      id: json['id'],
+      museumPhrase: json['museum-phrase'],
+      monthNorthern: json['availability']['month-northern'],
+      monthSouthern: json['availability']['month-southern'],
+      time: json['availability']['time'],
+      isAllDay: json['availability']['isAllDay'],
+      isAllYear: json['availability']['isAllYear'],
+      location: json['availability']['location'],
+      rarity: json['availability']['rarity'],
+      priceFlick: json['price-flick'],
       price: json['price'],
-      caughtQuote: json['caught'],
+      caughtQuote: json['catch-phrase'],
       link: json['link'],
     );
   }
