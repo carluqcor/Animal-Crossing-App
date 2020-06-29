@@ -122,6 +122,7 @@ class VillagerPage extends StatelessWidget {
                       )
                     : Separator.none(),
                 Separator.divider(),
+                //Text(FlutterI18n.currentLocale(context).toString()),
                 _villager.gender != null
                     ? RowItem.iconRowSet(
                         FlutterI18n.translate(

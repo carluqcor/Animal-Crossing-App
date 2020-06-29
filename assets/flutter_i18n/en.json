@@ -14,6 +14,7 @@
     "villagers": {
       "title": "Villagers",
       "selected": "No",
+      "name": "name-en",
       "non_selected": "Yes",
       "details": {
         "selected": "Selected",
@@ -38,6 +39,7 @@
     },
     "critters": {
       "title": "Critters",
+      "language": "0",
       "details": {
         "title": "Details",
         "time_year": "Time year",

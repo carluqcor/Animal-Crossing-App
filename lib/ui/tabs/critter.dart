@@ -8,6 +8,7 @@ import 'package:flutter_i18n/flutter_i18n.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:search_page/search_page.dart';
+import 'package:recase/recase.dart';
 
 import '../widgets/index.dart';
 import '../../models/index.dart';
@@ -57,7 +58,14 @@ class CritterTab extends StatelessWidget {
                       leading: SizedBox(
                         child: CacheImage(critter.link),
                       ),
-                      title: Text(critter.nameEn),
+                      title: Text(
+                        critter.name[int.parse(
+                          FlutterI18n.translate(
+                            context,
+                            'ac.critters.language',
+                          ),
+                        )].toString().sentenceCase,
+                      ),
                       trailing: Icon(Entypo.circle_with_cross, color: denyIcon),
                       onTap: () => Navigator.push(
                         context,
@@ -114,13 +122,23 @@ class CritterTab extends StatelessWidget {
                   ),
                   child: Icon(Icons.sentiment_dissatisfied),
                 ),
-                filter: (critter) => [critter.nameEn],
+                filter: (critter) => [critter.name[int.parse(
+                          FlutterI18n.translate(
+                            context,
+                            'ac.critters.language',
+                          ),
+                        )].toString().sentenceCase,],
                 showItemsOnEmpty: true,
                 builder: (critter) => ListTile(
                       leading: SizedBox(
-                        child: CacheImage(critter.image),
+                        child: CacheImage(critter.link),
                       ),
-                      title: Text(critter.nameEn),
+                      title: Text(critter.name[int.parse(
+                          FlutterI18n.translate(
+                            context,
+                            'ac.critters.language',
+                          ),
+                        )].toString().sentenceCase,),
                       trailing: Icon(Entypo.circle_with_cross,
                           color: Colors.redAccent),
                       onTap: () => Navigator.push(

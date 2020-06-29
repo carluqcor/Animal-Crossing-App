@@ -1,6 +1,8 @@
 import 'package:ACApp/util/get_color.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_i18n/flutter_i18n.dart';
 import 'package:flutter_icons/flutter_icons.dart';
+import 'package:geolocator/geolocator.dart';
 
 import '../../models/index.dart';
 import '../../util/index.dart';
@@ -12,12 +14,18 @@ import '../widgets/index.dart';
 class CritterPage extends StatelessWidget {
   final Critter _critter;
   final date = new DateTime.now();
+
   CritterPage(this._critter);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(_critter.nameEn), centerTitle: true),
+      appBar: AppBar(title: Text(_critter.name[int.parse(
+                          FlutterI18n.translate(
+                            context,
+                            'ac.villagers.language',
+                          ),
+                        )],), centerTitle: true),
       body: ListView(
         padding: const EdgeInsets.all(16),
         children: <Widget>[

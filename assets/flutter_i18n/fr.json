@@ -15,6 +15,7 @@
       "title": "Villageois/es",
       "selected": "No",
       "non_selected": "Oui",
+      "name": "name-fr",
       "details": {
         "selected": "Sélectionné",
         "title": "Détails",
@@ -38,6 +39,7 @@
     },
     "critters": {
       "title": "Créatures",
+      "language": 5,
       "details": {
         "title": "Détails",
         "time_year": "Saison",

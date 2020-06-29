@@ -1,3 +1,6 @@
+
+import 'package:flutter_i18n/flutter_i18n.dart';
+
 class Critters {
   final List<dynamic> critters;
 
@@ -14,17 +17,17 @@ class Critter {
       caughtQuote,
       museumPhrase,
       link,
-      nameEn,
       monthNorthern,
       monthSouthern,
       time,
       location,
       rarity;
+  final List<dynamic> name;
   final bool isAllDay, isAllYear;
   final int price, priceFlick;
 
   const Critter({
-    this.nameEn,
+    this.name,
     this.image,
     this.id,
     this.museumPhrase,
@@ -43,8 +46,7 @@ class Critter {
 
   factory Critter.fromJson(Map<String, dynamic> json) {
     return Critter(
-      nameEn: json['name']['name-en'],
-      image: json['image'],
+      name: json['name'],
       id: json['id'],
       museumPhrase: json['museum-phrase'],
       monthNorthern: json['availability']['month-northern'],

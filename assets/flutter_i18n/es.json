@@ -15,6 +15,7 @@
       "title": "Aldean@s",
       "selected": "No",
       "non_selected": "Si",
+      "name": "name-es",
       "details": {
         "selected": "Seleccionado",
         "title": "Detalles",
@@ -38,6 +39,7 @@
     },
     "critters": {
       "title": "Insectos",
+      "language": "3",
       "details": {
         "title": "Detalles",
         "time_year": "Temporada",

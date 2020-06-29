@@ -1,3 +1,6 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_i18n/flutter_i18n.dart';
+
 class Villagers {
   final List<dynamic> villagers;
 
@@ -59,7 +62,7 @@ class Villager {
 
   factory Villager.fromJson(Map<String, dynamic> json) {
     return Villager(
-      name: json['name'],
+      name: json['name-es'],
       image: json['image'],
       quote: json['quote'],
       gender: json['gender'],

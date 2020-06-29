@@ -1,17 +1,4 @@
-final Map<String, int> monthNumber = {
-  'January': 1,
-  'February': 2,
-  'March': 3,
-  'April': 4,
-  'May': 5,
-  'June': 6,
-  'July': 7,
-  'August': 8,
-  'September': 9,
-  'October': 10,
-  'November': 11,
-  'December': 12,
-};
+import 'package:flutter/material.dart';
 
 bool getAvailableCritter(DateTime dateNow, String timeYear, String timeDay) {
   List<String> months = timeYear.split(' ');
@@ -36,8 +23,8 @@ bool getAvailableCritter(DateTime dateNow, String timeYear, String timeDay) {
     endTime = new DateTime(dateNow.year, dateNow.month, dateNow.day, numero, 00, 00, 00);
   }
 
-  try {
-    if (dateNow.month < monthNumber[months[0]] || dateNow.month > monthNumber[months[2]])
+  /*try {
+    /if (dateNow.month < monthNumber[months[0]] || dateNow.month > monthNumber[months[2]])
       return false;
     else if (varAux == 'All day')
       return true;
@@ -47,5 +34,10 @@ bool getAvailableCritter(DateTime dateNow, String timeYear, String timeDay) {
       return false;
   } catch (e) {
     return false;
-  }
+  }*/
+}
+
+String getNameLanguage(BuildContext context, Locale locale){
+
+
 }

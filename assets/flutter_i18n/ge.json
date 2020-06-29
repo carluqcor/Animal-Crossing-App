@@ -15,6 +15,7 @@
       "title": "Dorfbewohner",
       "selected": "No",
       "non_selected": "Ja",
+      "name": "name-de",
       "details": {
         "selected": "Ausgewählt",
         "title": "Einzelheiten",
@@ -38,6 +39,7 @@
     },
     "critters": {
       "title": "Insekten",
+      "language": 2,
       "details": {
         "title": "Einzelheiten",
         "time_year": "Saison",
